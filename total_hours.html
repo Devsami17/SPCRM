@@ -10,7 +10,7 @@
 	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
 	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
 	<meta name="robots" content="noindex, nofollow">
-	<title>SP CRM</title>
+	<title>CRM - Total Hours</title>
 
 	
 <!-- Favicon -->
@@ -59,7 +59,9 @@
 </head>
 
 <body>
-
+	<div id="global-loader" style="display: none;">
+		<div class="page-loader"></div>
+	</div>
 
 
 	<!-- Main Wrapper -->
@@ -360,7 +362,7 @@
 						<li>
 							<ul>
 								<li class="menu-title"><span>MAIN MENU</span></li>
-								<li class="active">
+								<li>
 									<a  href="dashboard.html">
 										<i class="ti ti-layout-dashboard"></i><span>Dashboard</span>
 									</a>
@@ -386,7 +388,7 @@
 									</a>
 									<ul>
 										<li><a href="Workers-all-workers.html"><i class="ti ti-users"></i>All Workers</a></li>
-										<li><a href="total_hours.html"><i class="ti ti-clock-24"></i>Total Hours</a></li>
+										<li><a  class="active" href="total_hours.html"><i class="ti ti-clock-24"></i>Total Hours</a></li>
 										<li><a href="holidays.html"><i class="ti ti-helicopter-landing"></i>Holidays </a></li>
 
 										
@@ -455,232 +457,185 @@
 		</div>
 		<!-- /Sidebar -->
 
+
 	
 
 
 
 		<!-- Page Wrapper -->
-		<div class="page-wrapper">
+		<div id="all-workers" class="page-wrapper">
 			<div class="content">
-
+<div class="alert-box-container"></div>
 				<!-- Breadcrumb -->
 				<div class="d-md-flex d-block align-items-center justify-content-between mb-3">
 					<div class="my-auto mb-2">
-						<h2 class="mb-1">Dashboard</h2>
+						<h2 class="mb-1">Total Hours</h2>
 						
 					</div>
-					<div class="d-flex my-xl-auto right-content align-items-center flex-wrap ">
-						<div class="me-2 mb-2">
-							<div class="dropdown">
-								<a href="javascript:void(0);" class="dropdown-toggle export_btn btn btn-white d-inline-flex align-items-center" data-bs-toggle="dropdown">
-									<i class="ti ti-file-export me-1"></i>Export
-								</a>
-								<ul class="dropdown-menu  dropdown-menu-end p-3">
-									<li>
-										<a href="javascript:void(0);" class="dropdown-item rounded-1"><i
-												class="ti ti-file-type-pdf me-1"></i>Export as PDF</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);" class="dropdown-item rounded-1"><i
-												class="ti ti-file-type-xls me-1"></i>Export as Excel </a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="input-icon mb-2 position-relative">
-							<span class="input-icon-addon">
-								<i class="ti ti-calendar text-gray-9"></i>
-							</span>
-							<input type="text" class="form-control date-range bookingrange" placeholder="dd/mm/yyyy - dd/mm/yyyy">
-						</div>
-						
-					</div>
+					
 				</div>
-				<!-- /Breadcrumb -->
-
-				<div class="row">
-					<div class="col-xl-3 col-md-6">
-						<div class="card position-relative">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div class="avatar avatar-md br-10 icon-rotate bg-primary flex-shrink-0">
-										<span class="d-flex align-items-center"><i class="ti ti-users text-white fs-16"></i></span>
-									</div>
-									<div class="ms-3">
-										<p class="fw-medium text-truncate mb-1">Total Wokers</p>
-										<h5>2400</h5>
-									</div>
-								</div>
-								<div class="progress progress-xs mb-2">
-									<div class="progress-bar bg-primary" role="progressbar" style="width: 40%"></div>
-								</div>
-								<p class="fw-medium fs-13 mb-0"><span class="text-danger fs-12"><i class="ti ti-arrow-wave-right-up me-1"></i>-4.01% </span> from last week</p>
-								<span class="position-absolute top-0 end-0"><img src="https://smarthr.co.in/demo/html/template/assets/img/bg/card-bg-04.png" alt="Img"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6">
-						<div class="card position-relative">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div class="avatar avatar-md br-10 icon-rotate bg-secondary flex-shrink-0">
-										<span class="d-flex align-items-center"><i class="ti ti-heartbeat text-white fs-16"></i></span>
-									</div>
-									<div class="ms-3">
-										<p class="fw-medium text-truncate mb-1">Total Clients</p>
-										<h5>15000</h5>
-									</div>
-								</div>
-								<div class="progress progress-xs mb-2">
-									<div class="progress-bar bg-secondary" role="progressbar" style="width: 40%"></div>
-								</div>
-								<p class="fw-medium fs-13 mb-0"><span class="text-success fs-12"><i class="ti ti-arrow-wave-right-up me-1"></i>+20.01% </span> from last week</p>
-								<span class="position-absolute top-0 end-0"><img src="https://smarthr.co.in/demo/html/template/assets/img/bg/card-bg-04.png" alt="Img"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6">
-						<div class="card position-relative">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div class="avatar avatar-md br-10 icon-rotate bg-danger flex-shrink-0">
-										<span class="d-flex align-items-center"><i class="ti ti-stairs-up text-white fs-16"></i></span>
-									</div>
-									<div class="ms-3">
-										<p class="fw-medium text-truncate mb-1">No of Invoice Sent</p>
-										<h5>30</h5>
-									</div>
-								</div>
-								<div class="progress progress-xs mb-2">
-									<div class="progress-bar bg-pink" role="progressbar" style="width: 40%"></div>
-								</div>
-								<p class="fw-medium fs-13 mb-0"><span class="text-success fs-12"><i class="ti ti-arrow-wave-right-up me-1"></i>+55% </span> from last week</p>
-								<span class="position-absolute top-0 end-0"><img src="https://smarthr.co.in/demo/html/template/assets/img/bg/card-bg-04.png" alt="Img"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6">
-						<div class="card position-relative">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div class="avatar avatar-md br-10 icon-rotate bg-purple flex-shrink-0">
-										<span class="d-flex align-items-center"><i class="ti ti-users-group text-white fs-16"></i></span>
-									</div>
-									<div class="ms-3">
-										<p class="fw-medium text-truncate mb-1">Pending Interviews</p>
-										<h5>10</h5>
-									</div>
-								</div>
-								<div class="progress progress-xs mb-2">
-									<div class="progress-bar bg-purple" role="progressbar" style="width: 40%"></div>
-								</div>
-								<p class="fw-medium fs-13 mb-0"><span class="text-success fs-12"><i class="ti ti-arrow-wave-right-up me-1"></i>+55% </span> from last week</p>
-								<span class="position-absolute top-0 end-0"><img src="https://smarthr.co.in/demo/html/template/assets/img/bg/card-bg-04.png" alt="Img"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xl-12">
-                        <div class="card custom-card">
-                            <div class="card-header">
-                                <div class="card-title">Live Tracking</div>
-                            </div>
-                            <div class="card-body">
-                                <div id="map"></div>
-                            </div>
+                <div class="d-flex my-xl-auto justify-content-between align-items-center flex-wrap ">
+                    <div class="me-2">
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle export_btn btn btn-white d-inline-flex align-items-center" data-bs-toggle="dropdown">
+                                <i class="ti ti-file-export me-1"></i>Export
+                            </a>
+                            <ul class="dropdown-menu  dropdown-menu-start p-3">
+                                <li>
+                                    <a href="javascript:void(0);" class="dropdown-item rounded-1"><i
+                                            class="ti ti-file-type-pdf me-1"></i>Export as PDF</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="dropdown-item rounded-1"><i
+                                            class="ti ti-file-type-xls me-1"></i>Export as Excel </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-				
-				</div>
-				<div class="row">
-					<div class="col-xl-8 d-flex">
-						<div class="card flex-fill">
-							<div class="card-header">
-								<div class="d-flex align-items-center justify-content-between flex-wrap row-gap-2">
-									<h5>Overall Performance</h5>
-									<div class="dropdown">
-										<a href="javascript:void(0);" class="btn btn-white border btn-sm d-inline-flex align-items-center" data-bs-toggle="dropdown">
-											<i class="ti ti-calendar me-1"></i>2023 - 2024
-										</a>
-										<ul class="dropdown-menu  dropdown-menu-end p-3">
-											<li>
-												<a href="javascript:void(0);" class="dropdown-item rounded-1">2023 - 2024</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="dropdown-item rounded-1">2022 - 2023</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="dropdown-item rounded-1">2021 - 2023</a>
-											</li>
-										</ul>
-									</div>
-								</div>
+					<div class="me-2 mb-2 filter_area">
+                       
+                            
+							
+							
+								<!-- Search -->
+								<div class="input-group input-group-flat d-inline-flex me-1">
+									<span class="input-icon-addon">
+										<i class="ti ti-search"></i>
+									</span>
+									<input type="text" class="form-control search_box" placeholder="Search...">
+									
+							
+								<!-- /Search -->
+							
+							
 							</div>
-							<div class="card-body pb-0">
-								<div class="row g-2 justify-content-center mb-3">
-									<div class="col-md col-sm-4 col-6">
-										<div class="border rounded p-2">
-											<p class="mb-1"><i class="ti ti-point-filled text-primary"></i>Clients</p>
-											<h6>50000</h6>
-										</div>
-									</div>
-									<div class="col-md col-sm-4 col-6">
-										<div class="border rounded p-2">
-											<p class="mb-1"><i class="ti ti-point-filled text-primary"></i>Sites</p>
-											<h6>25985</h6>
-										</div>
-									</div>
-									<div class="col-md col-sm-4 col-6">
-										<div class="border rounded p-2">
-											<p class="mb-1"><i class="ti ti-point-filled text-primary"></i>Workers</p>
-											<h6>12566</h6>
-										</div>
-									</div>
-									<div class="col-md col-sm-4 col-6">
-										<div class="border rounded p-2">
-											<p class="mb-1"><i class="ti ti-point-filled text-primary"></i>Interviews</p>
-											<h6>8965</h6>
-										</div>
-									</div>
-									<div class="col-md col-sm-4 col-6">
-										<div class="border rounded p-2">
-											<p class="mb-1"><i class="ti ti-point-filled text-primary"></i>Scheduled</p>
-											<h6>2452</h6>
-										</div>
-									</div>
-								</div>
-								<div id="revenue-income"></div>
-							</div>
+					
+                     
+                    </div>
+                   
+                    
+                </div>
+				<!-- /Breadcrumb -->
+
+				<div class="card">
+					
+				<div class="card-body p-0">
+						<div class="custom-datatable-filter table-responsive">
+							<table class="table datatable">
+								<thead class="thead-light">
+									<tr class="text-center">
+										
+										<th>Worker Name</th>
+										<th>Total Hours Name</th>
+										<th>Overtime Hours</th>
+										<th>Holiday Hours</th>
+										
+									</tr>
+								</thead>
+								<tbody>
+							
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+							<tr>
+								<td>Michael Scott</td>
+								<td>1,235.00</td>
+								<td>15.00</td>
+								<td>100.00</td>
+							</tr>
+
+							
+								</tbody>
+							</table>
+							
 						</div>
-					</div>
-					<div class="col-xl-4 d-flex">
-						<div class="card flex-fill">
-							<div class="card-header">
-								<div class="d-flex align-items-center justify-content-between flex-wrap row-gap-2">
-									<h5>New Leads</h5>
-									<div class="dropdown">
-										<a href="javascript:void(0);" class="btn btn-white border btn-sm d-inline-flex align-items-center" data-bs-toggle="dropdown">
-											<i class="ti ti-calendar me-1"></i>This Week
-										</a>
-										<ul class="dropdown-menu  dropdown-menu-end p-3">
-											<li>
-												<a href="javascript:void(0);" class="dropdown-item rounded-1">This Week</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="dropdown-item rounded-1">This Month</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="dropdown-item rounded-1">This Year</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="card-body pb-0">
-								<div id="heat_chart"></div>
-							</div>
-						</div>
+						<nav aria-label="Page navigation" class="pagination-style-3 pt-2 pb-2">
+							<ul class="pagination mb-0 flex-wrap justify-content-end">
+								<li class="page-item disabled">
+									<a class="page-link" href="javascript:void(0);">
+										Prev
+									</a>
+								</li>
+								<li class="page-item active"><a class="page-link"
+										href="javascript:void(0);">1</a></li>
+								<li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+								<li class="page-item">
+									<a class="page-link" href="javascript:void(0);">
+										<i class="fas fa-ellipsis-h"></i>
+									</a>
+								</li>
+								<li class="page-item"><a class="page-link" href="javascript:void(0);">16</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link text-primary" href="javascript:void(0);">
+										Next
+									</a>
+								</li>
+							</ul>
+						</nav>
 					</div>
 				</div>
 			
@@ -690,71 +645,91 @@
 
 		</div>
 		<!-- /Page Wrapper -->
+	<!-- Add Client -->
 
+	<!-- /Delete Modal -->
 	</div>
 	<!-- /Main Wrapper -->
-<!-- jQuery first -->
+
+<!-- jQuery -->
+
+
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-<!-- Moment (via CDN) -->
-<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/min/moment.min.js"></script>
-
-<!-- Bootstrap -->
+<!-- Bootstrap Core JS -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-<!-- Feather, Slimscroll, etc. -->
+<!-- Feather Icon JS -->
 <script src="assets/js/feather.min.js"></script>
+
+<!-- Slimscroll JS -->
 <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-<!-- Daterangepicker (after Moment.js) -->
+<!-- Daterangepicker JS -->
 <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 
-<!-- Apexcharts (if used) -->
+<!-- Chart JS -->
 <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-<!-- Optional chart data -->
 <script src="assets/plugins/apexchart/chart-data.js"></script>
 
-<!-- Peity (only if files exist) -->
-<!-- <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-<script src="assets/plugins/peity/chart-data.js"></script> -->
+<!-- Peity Chart JS -->
+<script src="assets/plugins/peity/jquery.peity.min.js"></script>
+<script src="assets/plugins/peity/chart-data.js"></script>
 
-<!-- Bootstrap DateTimePicker -->
+<!-- Datetimepicker JS -->
+<script src="assets/js/moment.js"></script>
 <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-<!-- Pickr / Custom -->
+<!-- Color Picker JS -->
 <script src="assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+<!-- Custom JS -->
 <script src="assets/js/theme-colorpicker.js"></script>
 <script src="assets/js/script.js"></script>
 
  <!-- Leaflet Maps JS -->
  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+	  // Sidebar Menu
+	  $('.submenu > a').click(function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $submenu = $this.next('ul');
+  
+		if (!$this.hasClass('subdrop')) {
+		  $('.submenu > a').removeClass('subdrop');
+		  $('.submenu ul').slideUp(200);
+		  $this.addClass('subdrop');
+		  $submenu.slideDown(200);
+		} else {
+		  $this.removeClass('subdrop');
+		  $submenu.slideUp(200);
+		}
+	  });
+  
+	  var currentPage = window.location.pathname.split("/").pop();
+	  $('#sidebar-menu a').each(function () {
+		var linkPage = $(this).attr('href');
+		if (linkPage === currentPage) {
+		  $(this).addClass('active');
+		  var $submenu = $(this).closest('.submenu');
+		  if ($submenu.length) {
+			$submenu.find('> a').addClass('subdrop');
+			$submenu.find('ul').slideDown(0).css('display', 'block');
+		  }
+		}
+	  });
+  
+	  // Toggle class for selection
+	  document.querySelectorAll('.day-box').forEach(box => {
+		box.addEventListener('click', () => {
+		  box.classList.toggle('selected');
+		});
+	  });
 
- <script>
+</script>
 
-   window.addEventListener('load', function () {
-      if (typeof L === 'undefined') {
-        alert('Leaflet (L) is still undefined! Check CDN.');
-        return;
-      }
-
-      var map = L.map('map').setView([51.505, -0.09], 13); 
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
-
-      
-      var redZone = L.circle([51.505, -0.09], {
-        color: '',        
-        fillColor: '#f03',  
-        fillOpacity: 0.5,
-        radius: 700         
-	      }).addTo(map);
-
-      redZone.bindPopup("Red Zone Area");
-    });
- </script>
-
+	
 </body>
 
 
