@@ -8,10 +8,11 @@
   <meta name="author" content="Dreams Technologies">
   <meta name="robots" content="noindex, nofollow">
   <title>CRM - Scheduling</title>
-
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="shortcut icon" href="https://voags.com/assets/imgs/home1/logo.webp" type="image/webp">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://voags.com/assets/imgs/home1/logo.webp">
+  
+  <link rel="shortcut icon" href="assets/sp_logo.png" type="image/webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/sp_logo.png">
 
   <!-- Preload Critical CSS -->
   <link rel="preload" href="assets/css/bootstrap.min.css" as="style">
@@ -258,14 +259,14 @@
 		<div class="sidebar" id="sidebar">
 			<!-- Logo -->
 			<div class="sidebar-logo">
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="logo logo-normal">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="logo logo-normal">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="logo-small">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="logo-small">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="dark-logo">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="dark-logo">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
 			</div>
 			<!-- /Logo -->
@@ -436,7 +437,7 @@
 
 
 		<!-- Page Wrapper -->
-		<div id="scheduling" class="page-wrapper">
+		<div id="scheduling" class="page-wrapper security_board">
 			<div class="content">
 <div class="alert-box-container"></div>
 				<!-- Breadcrumb -->
@@ -522,7 +523,63 @@
                    
                   </div>
               
-						<div id='calendar'></div>
+				  <div class="row" style="padding-right: 0px !important; padding-left: 0px !important;">
+
+					<!-- Calendar Sidebar -->
+					<div class="col-xxl-3 col-xl-4"  style="padding-right: 0px !important; padding-left: 0px !important;">
+						<div class="card">
+							<div class="card-body p-3">
+								<div class="border-bottom pb-2 mb-4">
+									<div class="datepic"></div> 
+								</div>
+
+								<!-- Event -->
+								<div class="border-bottom pb-4 mb-4">
+									<div class="d-flex align-items-center justify-content-between mb-2">
+										<h5>Event </h5>
+										<a href="#" class="link-primary" data-bs-toggle="modal" data-bs-target="#add_event"><i class="ti ti-square-rounded-plus-filled fs-16"></i></a>
+									</div>
+									<p class="fs-12 mb-2">Drag and drop your event or click in the calendar</p>
+									<div id='external-events'>
+										<div class="fc-event bg-transparent-success mb-1" data-event='{ "title": "Team Events" }' data-event-classname="bg-transparent-success">
+											<i class="ti ti-square-rounded text-success me-2"></i>Team Events
+										</div>
+										<div class="fc-event bg-transparent-warning mb-1" data-event='{ "title": "Team Events" }' data-event-classname="bg-transparent-warning">
+											<i class="ti ti-square-rounded text-warning me-2"></i>Work
+										</div>
+										<div class="fc-event bg-transparent-danger mb-1" data-event='{ "title": "External" }' data-event-classname="bg-transparent-danger">
+											<i class="ti ti-square-rounded text-danger me-2"></i>External
+										</div>
+										<div class="fc-event bg-transparent-skyblue mb-1" data-event='{ "title": "Projects" }' data-event-classname="bg-transparent-skyblue">
+											<i class="ti ti-square-rounded text-skyblue me-2"></i>Projects
+										</div>
+										<div class="fc-event bg-transparent-purple mb-1" data-event='{ "title": "Applications" }' data-event-classname="bg-transparent-purple">
+											<i class="ti ti-square-rounded text-purple me-2"></i>Applications
+										</div>
+										<div class="fc-event bg-transparent-info mb-0" data-event='{ "title": "Desgin" }' data-event-classname="bg-transparent-info">
+											<i class="ti ti-square-rounded text-info me-2"></i>Desgin
+										</div>
+									</div>
+								</div>
+								<!-- /Event -->
+
+					
+
+							</div>
+						</div>					
+
+					</div>
+					<!-- /Calendar Sidebar -->
+
+					<div class="col-xxl-9 col-xl-8 theiaStickySidebar">	
+						<div class="card border-0">
+							<div class="card-body">			
+								<div id="calendar"></div>
+							</div>
+						</div>		
+					</div>
+
+				</div>
 				
                   <!-- Calendar View -->
                 
@@ -1390,15 +1447,7 @@
 								</div>
 							</form>
 							
-							<script>
-								document.querySelector('.add-multiple-shifts_btn').addEventListener('click', function (e) {
-									e.preventDefault();
-									const wrapper = document.querySelector('.shift-wrapper');
-									const group = wrapper.querySelector('.shift-group');
-									const clone = group.cloneNode(true);
-									wrapper.appendChild(clone);
-								});
-							</script>
+							
 							
 						</div>
 					</div>
@@ -1427,7 +1476,7 @@
   
 
 <!-- Core JS Libraries -->
-<script src="assets/js/jquery-3.7.1.min.js" defer></script>
+<script src="assets/js/jquery-3.7.1.min.js" ></script>
 <script src="assets/js/bootstrap.bundle.min.js" defer></script>
 <script src="assets/js/feather.min.js" defer></script>
 <script src="assets/js/jquery.slimscroll.min.js" defer></script>
@@ -1441,7 +1490,7 @@
 
 <!-- Other Plugins -->
 <script src="assets/plugins/@simonwep/pickr/pickr.es5.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js" defer></script>
+<script src="https://smarthr.co.in/demo/html/template/assets/plugins/fullcalendar/index.global.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 
 <!-- Moment + Datetimepicker -->
@@ -1451,29 +1500,20 @@
 <!-- Custom Scripts -->
 <script src="assets/js/theme-colorpicker.js" defer></script>
 <script src="assets/js/script.js" defer></script>
-
+<script>
+	document.querySelector('.add-multiple-shifts_btn').addEventListener('click', function (e) {
+		e.preventDefault();
+		const wrapper = document.querySelector('.shift-wrapper');
+		const group = wrapper.querySelector('.shift-group');
+		const clone = group.cloneNode(true);
+		wrapper.appendChild(clone);
+	});
+</script>
 <!-- Inline Scripts after libraries load -->
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
-	  // Tabs
-	  const tabs = document.querySelectorAll(".tabs-parent button");
-	  const tabPanes = document.querySelectorAll(".tab-pane");
-  
-	  tabs.forEach(tab => {
-		tab.addEventListener("click", () => {
-		  tabs.forEach(t => t.classList.remove("active"));
-		  tabPanes.forEach(p => p.classList.remove("show", "active"));
-		  tab.classList.add("active");
-  
-		  const targetPane = document.querySelector(tab.dataset.bsTarget);
-		  if (targetPane) {
-			targetPane.classList.add("show", "active");
-		  }
-		});
-	  });
-  
-	  // Map Setup
-	  const london = [51.5074, -0.1278];
+	 // Map Setup
+	 const london = [51.5074, -0.1278];
 	  const oxford = [51.7520, -1.2577];
   
 	  const map1 = L.map('map-first').setView(london, 8);
@@ -1487,11 +1527,16 @@
 	  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; OpenStreetMap contributors'
 	  }).addTo(map2);
-  
-	  // Calendar Setup
+	  
+	})
+</script>
+<script>
+	
+	document.addEventListener('DOMContentLoaded', function () {
 	  const today = new Date();
 	  const calendarEl = document.getElementById('calendar');
-	  const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay()));
+	  const startOfWeek = new Date(today);
+	  startOfWeek.setDate(today.getDate() - today.getDay());
   
 	  const formatDateTime = (date, hour, minute) => {
 		const d = new Date(date);
@@ -1502,38 +1547,28 @@
   
 	  const getRandomUrgency = () => Math.random() < 0.5;
   
-	  const events = [...Array.from({ length: 7 }, (_, day) => (
-		Array.from({ length: 10 }, (_, index) => ({
-		  title: `Event ${index + 1}`,
-		  start: formatDateTime(new Date(startOfWeek).setDate(startOfWeek.getDate() + day), 8 + Math.floor(index / 2), 30 * (index % 2)),
-		  end: formatDateTime(new Date(startOfWeek).setDate(startOfWeek.getDate() + day), 9 + Math.floor(index / 2), 30 * (index % 2)),
+	  const events = [...Array.from({ length: 7 }, (_, day) =>
+		Array.from({ length: 8 }, (_, i) => ({
+		  title: `Event ${i + 1}`,
+		  start: formatDateTime(new Date(startOfWeek).setDate(startOfWeek.getDate() + day), 9 + i, 0),
+		  end: formatDateTime(new Date(startOfWeek).setDate(startOfWeek.getDate() + day), 10 + i, 0),
 		  first: 'assets/img/icons/crown.svg',
 		  second: 'assets/img/icons/users_red.svg',
 		  third: 'assets/img/users/user-01.jpg',
-		  location: ['The Brunswick Centre', 'Conference Room', 'Client\'s Office', 'Strategy Room', 'Main Hall', 'Outdoor Park', 'Lounge'][day],
+		  location: ['Room A', 'Room B', 'Main Hall', 'Strategy Room', 'Client Office'][i % 5],
 		  urgent: getRandomUrgency()
 		}))
-	  )).flat()];
+	  ).flat()];
   
-	  let headerToolbarOptions;
-	  if (window.innerWidth < 900) {
-		headerToolbarOptions = {
-		  left: 'prev,today,next',
-		  center: 'title',
-		  right: 'dayGridDay'
-		};
-	  } else {
-		headerToolbarOptions = {
-		  left: 'prev,today,next',
-		  center: 'title',
-		  right: 'dayGridMonth,dayGridWeek,dayGridDay'
-		};
-	  }
+	  const headerToolbarOptions = window.innerWidth < 900
+		? { left: 'prev today next', center: 'title', right: 'dayGridDay' }
+		: { left: 'prev today next', center: 'title', right: 'dayGridMonth,dayGridWeek,dayGridDay' };
   
 	  const calendar = new FullCalendar.Calendar(calendarEl, {
 		initialView: window.innerWidth < 900 ? 'dayGridDay' : 'dayGridWeek',
-		initialDate: new Date(startOfWeek).toISOString().split('T')[0],
+		initialDate: new Date().toISOString().split('T')[0],
 		headerToolbar: headerToolbarOptions,
+		events: events,
 		eventContent: function (info) {
 		  const event = info.event;
 		  const props = event.extendedProps;
@@ -1541,7 +1576,6 @@
 		  const container = document.createElement('div');
 		  container.className = '_schedule-box-container';
 		  container.style.marginBottom = '5px';
-  
 		  if (props.urgent) container.classList.add('urgent-event');
   
 		  container.innerHTML = `
@@ -1550,17 +1584,15 @@
 				${event.start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - 
 				${event.end ? event.end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''}
 			  </div>
-			  <img src="${props.first}" alt="Icon" class="_schedule-box-icon">
+			  <img src="${props.first}" class="_schedule-box-icon" alt="icon">
 			</div>
 			<div class="_schedule-box-row">
 			  <div class="_schedule-box-text _schedule-box-name">${event.title}</div>
-			  <img src="${props.third}" alt="Avatar" class="_schedule-box-avatar">
+			  <img src="${props.third}" class="_schedule-box-avatar" alt="avatar">
 			</div>
 			<div class="_schedule-box-row">
-			  <div class="_schedule-box-text _schedule-box-location">${props.location || 'Unknown location'}</div>
-			  <div class="_schedule-box-alert">
-				<img src="${props.second}" alt="Alert Icon">
-			  </div>
+			  <div class="_schedule-box-text _schedule-box-location">${props.location || 'Unknown'}</div>
+			  <div class="_schedule-box-alert"><img src="${props.second}" alt="alert"></div>
 			</div>
 		  `;
   
@@ -1570,11 +1602,8 @@
 		  const modal = new bootstrap.Modal(document.getElementById('eventModal'));
 		  modal.show();
 		},
-		events: events
 	  });
   
-	
-    
 	  function updateCalendarView() {
 		if (window.innerWidth < 900) {
 		  calendar.changeView('dayGridDay');
@@ -1584,11 +1613,32 @@
 	  }
   
 	  window.addEventListener('resize', updateCalendarView);
-	  updateCalendarView();
 	  calendar.render();
+	  updateCalendarView();
   
-	
+	  // ✅ Sidebar Mini Calendar (datepicker) with FullCalendar
+	  const sidebarEl = document.querySelector('.datepic');
+	  const sidebarCal = document.createElement('div');
+	  sidebarEl.appendChild(sidebarCal);
   
+	  new FullCalendar.Calendar(sidebarCal, {
+		initialView: 'dayGridMonth',
+		headerToolbar: {
+		  left: 'prev',
+		  center: 'title',
+		  right: 'next'
+		},
+		selectable: true,
+		dateClick: function (info) {
+		  calendar.gotoDate(info.dateStr);
+		},
+		height: 'auto',
+		initialDate: new Date().toISOString().split('T')[0],
+	  }).render();
+	});
+  </script>
+  <script>
+	  
 	  // Sidebar Menu
 	  $('.submenu > a').click(function (e) {
 		e.preventDefault();
@@ -1619,13 +1669,6 @@
 		}
 	  });
   
-	  // Toggle class for selection
-	  document.querySelectorAll('.day-box').forEach(box => {
-		box.addEventListener('click', () => {
-		  box.classList.toggle('selected');
-		});
-	  });
-	});
   </script>
   
 	

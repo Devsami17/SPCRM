@@ -14,10 +14,10 @@
 
 	
 <!-- Favicon -->
-<link rel="shortcut icon" type="image/x-icon" href="https://voags.com/assets/imgs/home1/logo.webp">
+<link rel="shortcut icon" type="image/x-icon" href="assets/sp_logo.png">
 
 <!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="https://voags.com/assets/imgs/home1/logo.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/sp_logo.png">
 
 <!-- Theme Script js -->
 <script src="assets/js/theme-script.js"></script>
@@ -47,7 +47,10 @@
   />
 <!-- Daterangepicker CSS -->
 <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
-
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
 <!-- Color Picker CSS -->
 <link rel="stylesheet" href="assets/plugins/flatpickr/flatpickr.min.css">
 <link rel="stylesheet" href="assets/plugins/@simonwep/pickr/themes/nano.min.css">
@@ -282,14 +285,14 @@
 		<div class="sidebar" id="sidebar">
 			<!-- Logo -->
 			<div class="sidebar-logo">
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="logo logo-normal">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="logo logo-normal">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="logo-small">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="logo-small">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="dark-logo">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="dark-logo">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
 			</div>
 			<!-- /Logo -->
@@ -1054,512 +1057,425 @@
 					<div class="tab-content" id="myTabContent">
 						<div class="tab-pane fade show active" id="basic-info" role="tabpanel" aria-labelledby="info-tab" tabindex="0">
 								<div class="modal-body pb-0 ">	
-									<div class="row">
-										
+									<div class="row part-1">
 										<div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Username <span class="text-danger"> *</span></label>
-												<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Password <span class="text-danger"> *</span></label>
-												<input type="text" class="form-control">
-											</div>									
+										  <div class="mb-3">
+											<div id="map"></div>
+										  </div>
 										</div>
 										<div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Status</label>
-												<select name="" id="" class="form-select">
-													<option value="" selected>Active</option>
-                                                    <option value="">Terminated</option>
-                                                    <option value="">Need Approval</option>
-												</select>
-											</div>									
+										  <div class="mb-3">
+											<label class="form-label">Username</label>
+											<input type="text" class="form-control" placeholder="Enter Username">
+										  </div>
+										  <div class="mb-3">
+											<label class="form-label">Password</label>
+											<input type="password" class="form-control" placeholder="Enter Password">
+										  </div>
+										  <div class="mb-3">
+											<label class="form-label">Status</label>
+											<select class="form-select">
+											  <option selected>Active</option>
+											  <option>Terminated</option>
+											  <option>Need Approval</option>
+											</select>
+										  </div>
 										</div>
-										
-										<div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Forename <span class="text-danger"> *</span></label>
-												<input type="text" class="form-control">
-											</div>									
+									  </div>
+									
+									  <div class="row part-2">
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Forename</label>
+										  <input type="text" class="form-control bg-yellow" placeholder="Enter Forename">
 										</div>
-										<div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Surname <span class="text-danger"> *</span></label>
-												<input type="text" class="form-control">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Surname</label>
+										  <input type="text" class="form-control bg-yellow" placeholder="Enter Surname">
 										</div>
-										
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Email <span class="text-danger"> *</span></label>
-												<input type="email" placeholder="Enter Email" class="form-control">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Gender</label>
+										  <select class="form-select bg-yellow">
+											<option selected>Male</option>
+											<option>Female</option>
+										  </select>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">NIL Number <span class="text-danger"> *</span></label>
-												<input type="email" placeholder="Enter NIL Number" class="form-control">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label ">Email</label>
+										  <input type="email" class="form-control bg-yellow" placeholder="Enter Email">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">SIA Expiry     <span class="text-danger"> *</span></label>
-												<input type="email" placeholder="Enter NIL Number" class="form-control">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">N.I. Number</label>
+										  <input type="text" class="form-control bg-yellow" placeholder="Enter N.I. Number">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">S.I.A License <span class="text-danger"> *</span></label>
-												<input type="email" placeholder="Enter S.I.A License" class="form-control">
-											</div>									
+										<div class="col-md-4 mb-3 d-flex align-items-end">
+										  <div class="form-check">
+											<input class="form-check-input" type="checkbox" id="isaCheck">
+											<label class="form-check-label text-danger" for="isaCheck">ISA not required</label>
+										  </div>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">License Type<span class="text-danger"> *</span></label>
-												<select name="" id="" class="form-select">
-                                                    <option value="">--choose--</option>
-                                                    <option value="">CCTV</option>
-                                                    <option value="">Close Protection</option>
-                                                    <option value="">Door Supervision</option>
-                                                    <option value="">Key Holding</option>
-                                                    <option value="">Security Guarding</option>
-                                                    <option value="">Other</option>
-
-
-                                                </select>
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">SIA Licence</label>
+										  <input type="text" class="form-control bg-yellow" placeholder="Enter SIA Licence">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Service Type<span class="text-danger"> *</span></label>
-												<textarea name="" class="form-control" id="" cols="30" rows="6">Alarm Response
-Event Staff
-Mobile Petrol
-Static Guards
-
-                                                </textarea>
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">SIA Expiry</label>
+										  <input type="text" class="form-control bg-yellow" placeholder="Enter SIA Expiry">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Date Of Registration<span class="text-danger"> *</span></label>
-											<input type="date" class="form-control">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Licence Type</label>
+										  <select class="form-select bg-yellow" >
+											<option selected>Choose</option>
+										  </select>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Visa Type<span class="text-danger"> *</span></label>
-											<select name="" id="" class="form-select">
-                                                <option value="">Indefinite leave to remain (ILR)</option>
-                                           <option value="">Limited leave to remain</option>
-                                           <option value="">Spouse</option>
-                                           <option value="">Student</option>
-                                           <option value="">Other</option>
-                                           <option value="">Skill Worker</option>
-                                           <option value="">Independent</option>
-                                           <option value="">Settlement</option>
-                                           <option value="">British</option>
-                                           <option value="">Spanish</option>
-                                           <option value="">Italian</option>
-
-
-
-                                           
-                                           
-                                            </select>
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Visa Expiry<span class="text-danger"> *</span></label>
-											<input type="text"  class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Date Of Entry /Re-entry<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">No Of hours per week<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Passport No<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Passport Expiry<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">D.O.B<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Place Of Birth<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div>    
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Address Group<span class="text-danger"> *</span></label>
-											<select name="" id="" class="form-select">
-                                                <option value="">--choose--</option>
-                                            </select>
-											</div>									
-										</div>    
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Contact No<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter Contact No">
-											</div>									
-										</div>   
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Emergency Contact<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter Emergency Contact">
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Job Title<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="">
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Nationality<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="">
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Nationality<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="">
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">PIN<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter PIN">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Reference<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter Reference">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Relationship<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter Relationship">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Subcontractor<span class="text-danger"> *</span></label>
-												<textarea name="" class="form-control" id="" cols="30" rows="6">Massive Protection Services LTD
-Massive Protection Services LTD
-Massive Protection Services LTD
-Massive Protection Services LTD
-Massive Protection Services LTD
-
-                                                </textarea>
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Date of Entry / Re-entry</label>
+										  <input type="text" class="form-control" placeholder="Enter Date of Entry / Re-entry">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Share Code<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control ">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">D.O.B</label>
+										  <input type="text" class="form-control" placeholder="D.O.B">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Share Expiry<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control ">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Service Type</label>
+										  <select class="form-select">
+											<option selected>Alarm Response</option>
+											<option>Keyholding</option>
+											<option>Event Staff</option>
+											<option>Mobile Patrol</option>
+											<option>Static Guards</option>
+										  </select>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Biometric Residence permit<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control ">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Visa Type</label>
+										  <select class="form-select">
+											<option value="">Indefinite leave to remain (ILR)</option>
+											<option value="">Limited leave to remain</option>
+											<option value="">Spouse</option>
+											<option value="">Student</option>
+											<option value="">Other</option>
+											<option value="">Skill Worker</option>
+											<option value="">Independent</option>
+											<option value="">Settlement</option>
+											<option value="">British</option>
+											<option value="">Spanish</option>
+											<option value="">Italian</option>
+ 
+										  </select>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Biometric Residence permit expiry<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control ">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Visa Expiry</label>
+										  <input type="text" class="form-control" placeholder="Enter Visa Expiry">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">BRP Status<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value="">Student Visa</option>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Place of Work</label>
+										  <input type="text" class="form-control" placeholder="Place of Work">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">No of hours per week</label>
+										  <input type="text" class="form-control" placeholder="Enter Hours">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Passport no.</label>
+										  <input type="text" class="form-control" placeholder="Enter Passport no.">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Passport expiry</label>
+										  <input type="text" class="form-control" placeholder="Enter Passport expiry">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Address group</label>
+										  <select class="form-select">
+											<option selected>-- choose --</option>
+										  </select>
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Contact No:</label>
+										  <input type="text" class="form-control" placeholder="Enter Contact No">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Emergency contact</label>
+										  <input type="text" class="form-control" placeholder="Enter emergency contact no.">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Job Title</label>
+										  <input type="text" class="form-control" placeholder="Enter Job Title">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Nationality</label>
+										  <input type="text" class="form-control" placeholder="Enter nationality">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">P.I.N</label>
+										  <input type="text" class="form-control" placeholder="Enter PIN">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Reference</label>
+										  <input type="text" class="form-control" placeholder="Enter Reference">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Next of Kin</label>
+										  <input type="text" class="form-control" placeholder="Enter next of kin">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Relationship</label>
+										  <input type="text" class="form-control" placeholder="Enter Relationship">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Kin address</label>
+										  <input type="text" class="form-control" placeholder="Enter kin address">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Next of Kin Contact No.</label>
+										  <input type="text" class="form-control" placeholder="Enter Next of Kin Contact No.">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Kin Work tel</label>
+										  <input type="text" class="form-control" placeholder="Enter Work Tel">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Kin Mobile</label>
+										  <input type="text" class="form-control" placeholder="Enter Kin Mobile">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Share code</label>
+										  <input type="text" class="form-control" placeholder="Enter share code">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Biometric residence permit</label>
+										  <input type="text" class="form-control" placeholder="Enter biometric residence permit">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Biometric residence permit expiry</label>
+										  <input type="text" class="form-control" placeholder="Enter biometric residence permit expiry">
+										</div>
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">BRP status</label>
+										  <select class="form-select">
+										    <option value="" selected>Student Visa</option>
     <option value="">Dependent Visa</option>
     <option value="">Refugee Status</option>
     <option value="">Applied For A New Visa</option>
     <option value="">Skilled Worker Visa</option>
     <option value="">Other Visa</option>
-
-</select>
-											</div>									
+										  </select>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Settlement<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Settlement</label>
+										  <input type="text" class="form-control" placeholder="Settlement">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Tags<span class="text-danger"> *</span></label>
-<textarea name="" id="" cols="30" rows="4" class="form-control"></textarea>
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Tags</label>
+										  <textarea name="" id="" cols="30" rows="4" class="form-control">QA54ER</textarea>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Departments<span class="text-danger"> *</span></label>
-<textarea name="" id="" cols="30" rows="4" class="form-control"></textarea>
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Department</label>
+										  <select class="form-select">
+											<option selected>--choose--</option>
+										  </select>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">S.I.A License<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
+										<div class="col-md-4 mb-3">
+										  <label class="form-label">Subcontractor</label>
+										  <select class="form-select">
+											<option>AWS SERVICES LTD</option>
+											<option>GOOD HANDS LTD</option>
+											<option>TOTAL PROTECTION SERVICES LTD</option>
+											<option>MASSEC PROTECT LTD</option>
+											<option>XL STRATEGY SERVICES LTD</option>
+										  </select>
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">License Type<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value="">--choose--</option>
-</select>
-											</div>									
+										<div class="col-md-12 mb-3 d-flex align-items-end">
+											<div class="form-check">
+											  <input class="mb-0 form-check-input" type="checkbox" id="isaCheck">
+											  <label class="form-check-label " for="isaCheck">Additional License	</label>
+											</div>
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">S.I.A License</label>
+											<input type="text" class="form-control" placeholder="Enter S.I.A License">
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">License Type</label>
+											<select class="form-select">
+										<option value="">--choose--</option>
+											</select>
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">License Expiry</label>
+											<input type="text" class="form-control">
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">DBS confirmed</label>
+											<input type="text" class="form-control" placeholder="Enter DBS confirmed">
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">Address group</label>
+										<select class="form-select">
+											<option value="">--choose--</option>
+										</select>
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">Employee Picture</label>
+											<input type="file" class="form-control">
+										
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">Employee Type</label>
+											<select class="form-select">
+												<option value="">--choose--</option>
+											</select>
+										
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">Do you need visa to work or remain in the UK?</label>
+										    <div class="d-flex gap-3">
+												<div>
+													<input type="radio" class="form-check-input mb-0">
+													<label class="form-check-label">Yes</label>
+												</div>
+												<div>
+													<input type="radio" class="form-check-input mb-0">
+													<label class="form-check-label">No</label>
+												</div>
+											</div>
+										
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">A current driving license?</label>
+										    <div class="d-flex gap-3">
+												<div>
+													<input type="radio" class="form-check-input mb-0">
+													<label class="form-check-label">Yes</label>
+												</div>
+												<div>
+													<input type="radio" class="form-check-input mb-0">
+													<label class="form-check-label">No</label>
+												</div>
+											</div>
+										
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label for="" class="form-label">
+												License Number
+											</label>
+<input type="text" class="form-control" placeholder="Enter License Number">
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">License Expiry<span class="text-danger"> *</span></label>
-<input type="text" class="form-control"> 
-											</div>									
+										  <div class="col-md-4 mb-3">
+											<label class="form-label">Vehicle in use?</label>
+										    <div class="d-flex gap-3">
+												<div>
+													<input type="radio" class="form-check-input mb-0">
+													<label class="form-check-label">Yes</label>
+												</div>
+												<div>
+													<input type="radio" class="form-check-input mb-0">
+													<label class="form-check-label">No</label>
+												</div>
+											</div>
+										
+											
+										  </div>
+										  <div class="col-md-4 mb-3">
+											<label  class="form-label">Any current endorsement. If so please give details</label>
+										<input type="text" class="form-control">  
 										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">DBS confirmed<span class="text-danger"> *</span></label>
-<input type="text" class="form-control" placeholder="Enter DBS confirmed"> 
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Address Group<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value=""> -- choose -- </option>
-</select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Employement Picture<span class="text-danger"> *</span></label>
-<input type="file" class="form-control"> 
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Employement Type<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value="">--choose--</option>
-    <option value="">Restricted Hours</option>
-    <option value="">Standard</option>
-</select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Employement Type<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value="">--choose--</option>
-</select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Do you need visa to work or remain in the UK?<span class="text-danger"> *</span></label>
-<div class="d-flex gap-3">
-    <div>
-        <input type="radio" >
-        <label for="">Yes</label>
-    </div>
-  <div>
-    <input type="radio" >
-    <label for="">No</label>
-  </div>
-   
-</div>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">A current driving license?<span class="text-danger"> *</span></label>
-<div class="d-flex gap-3">
-    <div>
-        <input type="radio" >
-        <label for="">Yes</label>
-    </div>
-  <div>
-    <input type="radio" >
-    <label for="">No</label>
-  </div>
-   
-</div>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">License Number<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Vehicle in use?<span class="text-danger"> *</span></label>
-<div class="d-flex gap-3">
-    <div>
-        <input type="radio" >
-        <label for="">Yes</label>
-    </div>
-  <div>
-    <input type="radio" >
-    <label for="">No</label>
-  </div>
-   
-</div>
-											</div>									
-										</div>
-                                        <div class="col-md-12">
-											<div class="mb-3">
-												<label class="form-label">Any current endorsement. If so please give details<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <h3 class="mb-4 mt-4">Uniform Size</h3>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Collar<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Waist<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Shoe<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Jacket<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-12">
-											<div class="mb-3">
-												<label class="form-label">Signature of Applicant<span class="text-danger"> *</span></label>
-<input type="file" class="form-control">
-											</div>									
-										</div>
-                                        <h3 class="mb-4 mt-4">Payroll Information</h3>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Guard Rate<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Fixed Pay (if any)<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Payment Period<span class="text-danger"> *</span></label>
-                                                <select name="" id="" class="form-select">
-                                                    <option value="">Fortnightly</option>
-                                                </select>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Bank Account Name<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Bank Account Number<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Bank Sort Code<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Bank Name<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Other Information<span class="text-danger"> *</span></label>
-<textarea name="" id="" cols="30" rows="2" class="form-control"></textarea>
-											</div>									
-										</div>
-                                        <h3 class="mb-4 mt-4">Holidays</h3>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Holidays Entitlement<span class="text-danger"> *</span></label>
-<input type="text" class="form-control" value="28">
-											</div>									
-										</div>
-                                     
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">From Date<span class="text-danger"> *</span></label>
-<input type="date" class="form-control" >
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">To Date<span class="text-danger"> *</span></label>
-<input type="date" class="form-control" >
-											</div>									
-										</div>
+										<h3 class="mt-2 mb-4">Uniform Size</h3>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Collar</label>
+										<input type="text" class="form-control">
+									</div>  
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Waist</label>
+										<input type="text" class="form-control">
+									</div>  
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Jacket</label>
+										<input type="text" class="form-control">
+									</div>  
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Shoe</label>
+										<input type="text" class="form-control">
 									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Inseam</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Signature Of Applicant</label>
+										<input type="file" class="form-control">
+									</div>  
+									<h3 class="mt-2 mb-4">Payroll Information</h3>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Guard Rate</label>
+										<input type="text" placeholder="Enter Guard Rate" class="form-control">
+									</div>  
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Payment Period</label>
+										<select class="form-select">
+											<option selected>Fortnightly</option>
+										</select>
+									</div>  
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Fixed Pay (if any)</label>
+										<input type="text" placeholder="Enter Fixed Pay (if any)" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Bank Account Name</label>
+										<input type="text" placeholder="Enter Bank Account Name" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Bank Account Number</label>
+										<input type="text" placeholder="Enter Bank Account Number" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Bank Sort Code</label>
+										<input type="text" placeholder="Enter Bank Sort Code" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Bank Name</label>
+										<input type="text" placeholder="Enter Bank Name " class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Bank Branch</label>
+										<input type="text" placeholder="Enter Bank Branch" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Other Information</label>
+									<textarea name="" id="" cols="30" rows="4" class="form-control"></textarea>
+									</div>
+									<h3 class="mt-2 mb-4">Holidays</h3>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Holidays Entitement</label>
+										<input type="text" value="28" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">From Date</label>
+										<input type="date" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">To Date</label>
+										<input type="date"  class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">Holidays Entitement</label>
+										<input type="text" value="28" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">From Date</label>
+										<input type="date" class="form-control">
+									</div>
+									<div class="col-md-4 mb-3">
+										<label class="form-label">To Date</label>
+										<input type="date"  class="form-control">
+									</div>
+								</div>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-outline-light border me-2" data-bs-dismiss="modal">Cancel</button>
@@ -1575,538 +1491,7 @@ Massive Protection Services LTD
 	<!-- /Add Client -->
 
 	<!-- Edit Client -->
-	<div class="modal fade" id="edit_client">
-		<div class="modal-dialog modal-dialog-centered modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Edit Employee</h4>
-					<button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
-						<i class="ti ti-x"></i>
-					</button>
-				</div>
-				<form action="Clients.html" id="add_worker-form">
-					
-					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="basic-info" role="tabpanel" aria-labelledby="info-tab" tabindex="0">
-								<div class="modal-body pb-0 ">	
-									<div class="row">
-										
-										<div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Username <span class="text-danger"> *</span></label>
-												<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Password <span class="text-danger"> *</span></label>
-												<input type="text" class="form-control">
-											</div>									
-										</div>
-										<div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Status</label>
-												<select name="" id="" class="form-select">
-													<option value="" selected>Active</option>
-                                                    <option value="">Terminated</option>
-                                                    <option value="">Need Approval</option>
-												</select>
-											</div>									
-										</div>
-										
-										<div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Forename <span class="text-danger"> *</span></label>
-												<input type="text" class="form-control">
-											</div>									
-										</div>
-										<div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Surname <span class="text-danger"> *</span></label>
-												<input type="text" class="form-control">
-											</div>									
-										</div>
-										
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Email <span class="text-danger"> *</span></label>
-												<input type="email" placeholder="Enter Email" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">NIL Number <span class="text-danger"> *</span></label>
-												<input type="email" placeholder="Enter NIL Number" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">SIA Expiry     <span class="text-danger"> *</span></label>
-												<input type="email" placeholder="Enter NIL Number" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">S.I.A License <span class="text-danger"> *</span></label>
-												<input type="email" placeholder="Enter S.I.A License" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">License Type<span class="text-danger"> *</span></label>
-												<select name="" id="" class="form-select">
-                                                    <option value="">--choose--</option>
-                                                    <option value="">CCTV</option>
-                                                    <option value="">Close Protection</option>
-                                                    <option value="">Door Supervision</option>
-                                                    <option value="">Key Holding</option>
-                                                    <option value="">Security Guarding</option>
-                                                    <option value="">Other</option>
 
-
-                                                </select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Service Type<span class="text-danger"> *</span></label>
-												<textarea name="" class="form-control" id="" cols="30" rows="6">Alarm Response
-Event Staff
-Mobile Petrol
-Static Guards
-
-                                                </textarea>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Date Of Registration<span class="text-danger"> *</span></label>
-											<input type="date" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Visa Type<span class="text-danger"> *</span></label>
-											<select name="" id="" class="form-select">
-                                                <option value="">Indefinite leave to remain (ILR)</option>
-                                           <option value="">Limited leave to remain</option>
-                                           <option value="">Spouse</option>
-                                           <option value="">Student</option>
-                                           <option value="">Other</option>
-                                           <option value="">Skill Worker</option>
-                                           <option value="">Independent</option>
-                                           <option value="">Settlement</option>
-                                           <option value="">British</option>
-                                           <option value="">Spanish</option>
-                                           <option value="">Italian</option>
-
-
-
-                                           
-                                           
-                                            </select>
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Visa Expiry<span class="text-danger"> *</span></label>
-											<input type="text"  class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Date Of Entry /Re-entry<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">No Of hours per week<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Passport No<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Passport Expiry<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">D.O.B<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Place Of Birth<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control">
-											</div>									
-										</div>    
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Address Group<span class="text-danger"> *</span></label>
-											<select name="" id="" class="form-select">
-                                                <option value="">--choose--</option>
-                                            </select>
-											</div>									
-										</div>    
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Contact No<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter Contact No">
-											</div>									
-										</div>   
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Emergency Contact<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter Emergency Contact">
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Job Title<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="">
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Nationality<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="">
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Nationality<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="">
-											</div>									
-										</div>  
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">PIN<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter PIN">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Reference<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter Reference">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Relationship<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control " placeholder="Enter Relationship">
-											</div>									
-										</div> 
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Subcontractor<span class="text-danger"> *</span></label>
-												<textarea name="" class="form-control" id="" cols="30" rows="6">Massive Protection Services LTD
-Massive Protection Services LTD
-Massive Protection Services LTD
-Massive Protection Services LTD
-Massive Protection Services LTD
-
-                                                </textarea>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Share Code<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control ">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Share Expiry<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control ">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Biometric Residence permit<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control ">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Biometric Residence permit expiry<span class="text-danger"> *</span></label>
-											<input type="text" class="form-control ">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">BRP Status<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value="">Student Visa</option>
-    <option value="">Dependent Visa</option>
-    <option value="">Refugee Status</option>
-    <option value="">Applied For A New Visa</option>
-    <option value="">Skilled Worker Visa</option>
-    <option value="">Other Visa</option>
-
-</select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Settlement<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Tags<span class="text-danger"> *</span></label>
-<textarea name="" id="" cols="30" rows="4" class="form-control"></textarea>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Departments<span class="text-danger"> *</span></label>
-<textarea name="" id="" cols="30" rows="4" class="form-control"></textarea>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">S.I.A License<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">License Type<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value="">--choose--</option>
-</select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">License Expiry<span class="text-danger"> *</span></label>
-<input type="text" class="form-control"> 
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">DBS confirmed<span class="text-danger"> *</span></label>
-<input type="text" class="form-control" placeholder="Enter DBS confirmed"> 
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Address Group<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value=""> -- choose -- </option>
-</select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Employement Picture<span class="text-danger"> *</span></label>
-<input type="file" class="form-control"> 
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Employement Type<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value="">--choose--</option>
-    <option value="">Restricted Hours</option>
-    <option value="">Standard</option>
-</select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Employement Type<span class="text-danger"> *</span></label>
-<select name="" id="" class="form-select">
-    <option value="">--choose--</option>
-</select>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Do you need visa to work or remain in the UK?<span class="text-danger"> *</span></label>
-<div class="d-flex gap-3">
-    <div>
-        <input type="radio" >
-        <label for="">Yes</label>
-    </div>
-  <div>
-    <input type="radio" >
-    <label for="">No</label>
-  </div>
-   
-</div>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">A current driving license?<span class="text-danger"> *</span></label>
-<div class="d-flex gap-3">
-    <div>
-        <input type="radio" >
-        <label for="">Yes</label>
-    </div>
-  <div>
-    <input type="radio" >
-    <label for="">No</label>
-  </div>
-   
-</div>
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">License Number<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Vehicle in use?<span class="text-danger"> *</span></label>
-<div class="d-flex gap-3">
-    <div>
-        <input type="radio" >
-        <label for="">Yes</label>
-    </div>
-  <div>
-    <input type="radio" >
-    <label for="">No</label>
-  </div>
-   
-</div>
-											</div>									
-										</div>
-                                        <div class="col-md-12">
-											<div class="mb-3">
-												<label class="form-label">Any current endorsement. If so please give details<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <h3 class="mb-4 mt-4">Uniform Size</h3>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Collar<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Waist<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Shoe<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Jacket<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-12">
-											<div class="mb-3">
-												<label class="form-label">Signature of Applicant<span class="text-danger"> *</span></label>
-<input type="file" class="form-control">
-											</div>									
-										</div>
-                                        <h3 class="mb-4 mt-4">Payroll Information</h3>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Guard Rate<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Fixed Pay (if any)<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Payment Period<span class="text-danger"> *</span></label>
-                                                <select name="" id="" class="form-select">
-                                                    <option value="">Fortnightly</option>
-                                                </select>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Bank Account Name<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Bank Account Number<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Bank Sort Code<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Bank Name<span class="text-danger"> *</span></label>
-<input type="text" class="form-control">
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Other Information<span class="text-danger"> *</span></label>
-<textarea name="" id="" cols="30" rows="2" class="form-control"></textarea>
-											</div>									
-										</div>
-                                        <h3 class="mb-4 mt-4">Holidays</h3>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">Holidays Entitlement<span class="text-danger"> *</span></label>
-<input type="text" class="form-control" value="28">
-											</div>									
-										</div>
-                                     
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">From Date<span class="text-danger"> *</span></label>
-<input type="date" class="form-control" >
-											</div>									
-										</div>
-                                        <div class="col-md-6">
-											<div class="mb-3">
-												<label class="form-label">To Date<span class="text-danger"> *</span></label>
-<input type="date" class="form-control" >
-											</div>									
-										</div>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-outline-light border me-2" data-bs-dismiss="modal">Cancel</button>
-									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#success_modal">Save </button>
-								</div>
-						</div>
-					
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
 	<!-- /Edit Client -->
 
 	<!-- Add Client Success -->
@@ -2248,14 +1633,7 @@ $(document).ready(function() {
       }).addTo(map);
 
       
-      var redZone = L.circle([51.505, -0.09], {
-        color: '',        
-        fillColor: '#f03',  
-        fillOpacity: 0.5,
-        radius: 700         
-	      }).addTo(map);
-
-      redZone.bindPopup("Red Zone Area");
+      
     });
  </script>
 <script>
@@ -2299,7 +1677,31 @@ $(document).ready(function() {
 		window.location.href = "Workers-all-workers.html";
 	});
 	</script>
-	
+	 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+	 <script>
+		  window.addEventListener('load', function () {
+      if (typeof L === 'undefined') {
+        alert('Leaflet (L) is still undefined! Check CDN.');
+        return;
+      }
+
+      var map = L.map('map').setView([51.505, -0.09], 13); 
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      
+      var redZone = L.circle([51.505, -0.09], {
+        color: '',        
+        fillColor: '#f03',  
+        fillOpacity: 0.5,
+        radius: 700         
+	      }).addTo(map);
+
+      redZone.bindPopup("Red Zone Area");
+    });
+	 </script>
 </body>
 
 

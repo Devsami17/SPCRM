@@ -2866,7 +2866,7 @@ button:focus {
   border-color: #E8E9EA;
   color: #fff;
   height:35px !important;
-  width:60px;
+  width:80px;
 }
 .fc .fc-button-primary.fc-dayGridMonth-button, .fc .fc-button-primary:not(:disabled).fc-button-active {
   background-color: rgb(43, 57, 77);
@@ -14803,8 +14803,8 @@ button.swal2-cancel {
 .sidebar .sidebar-logo {
   position: fixed;
   height: 50px;
-  width: 252px;
-  padding: 16px 16px 0;
+  width: 220px;
+  padding: 16px 0px 0;
 }
 .sidebar .sidebar-logo .logo {
   display: block;
@@ -14818,7 +14818,7 @@ button.swal2-cancel {
   }
 }
 .sidebar .slimScrollDiv {
-  top: 50px;
+  top: 80px;
   padding: 16px;
 }
 @media (max-width: 575.98px) {
@@ -14839,7 +14839,7 @@ button.swal2-cancel {
   width: 100%;
 }
 .sidebar .sidebar-menu {
-  margin-top: 66px;
+  margin-top: 85px;
   padding: 0 12px;
 }
 .sidebar .sidebar-menu > ul > li {
@@ -28343,7 +28343,8 @@ span.flatpickr-weekday {
 }
 .logo-normal{
   height:auto;
-  width:80px;
+  width:60px;
+  margin:0 auto;
 }
 /* End:: swiper js */
 
@@ -28352,7 +28353,7 @@ span.flatpickr-weekday {
 display:none;
 }
 .export_btn{
-  background-color:rgb(255, 174, 61) !important;
+  background-color:rgb(255, 224, 25)!important;
 }
 .export_btn:hover , .add_btn:hover{
   color:#fff !important;
@@ -28583,11 +28584,39 @@ border-bottom: 1px solid #e9e9e9;
         font-size: 20px;
         font-weight: 600;
       }
-  
+      #external-events .fc-event .bg-transparent-success{
+        display:none;
+      }
+      .security_board .theiaStickySidebar .fc-scrollgrid-sync-table{
+        width:1400px !important;
+      }
+      #external-events .fc-event {
+        padding: 10px !important;
+    margin-bottom: 5px !important;
+      }
+      .theiaStickySidebar .card-body{
+        padding:0px 10px  !important;
+      }
       #scheduling  .fc .fc-daygrid-day-frame {
         padding: 0px;
       }
-  
+      .datepic .fc-toolbar-title{
+        font-size:14px !important;
+      }
+      .datepic .fc .fc-col-header-cell-cushion{
+        font-size:12px !important;
+      } 
+     .datepic  .fc .fc-daygrid-day-frame {
+        height: 32px !important;
+        width: 30px !important;
+        padding: 0px;
+    }
+ 
+.datepic  .fc .fc-daygrid-day.fc-day-today, .datepic .fc th.fc-day-today{
+    background-color:rgb(92, 181, 168) !important;
+    color:#fff !important; 
+  }
+
       #scheduling    .fc-event {
     
         font-size: 14px;
@@ -29071,9 +29100,13 @@ border:1px solid #e9e9e9;
  #add_shift-form .checkbox-label{
   font-size: 12px;
  }
- #add_shift .modal-dialog , #add_site .modal-dialog , #add_client .modal-dialog{
+ #add_shift .modal-dialog , #add_site .modal-dialog{
   min-width:90% !important;
   max-width:90% !important;
+ }
+ #add_client .modal-dialog{
+  min-width:85% !important;
+  max-width:85% !important;
  }
  .sites_action-btn{
 background: #047968 ; 
@@ -29084,4 +29117,33 @@ border-radius:4px;
 font-size:13px;
 padding:0px 10px;
 margin-right: 4px;
+}
+ .site_calendar #calendar .fc-daygrid-day-frame{
+  border:1px solid #e9e9e9;
+ } 
+ #add_client .part-1 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e9e9e9;
+  padding-bottom: 15px;
+}
+
+#add_client .part-1 #map {
+  width: 100%;
+  height: 270px;
+}
+
+
+#add_client .part-2 {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#add_client .bg-yellow{
+  background-color:rgb(219, 213, 169);
+  color:#000
+}
+#add_client .bg-yellow::placeholder{
+  color:#000
 }

@@ -7,11 +7,12 @@
   <meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, projects">
   <meta name="author" content="Dreams Technologies">
   <meta name="robots" content="noindex, nofollow">
-  <title>CRM - Scheduling</title>
-
+  <title>CRM - Worker Calendar</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="shortcut icon" href="https://voags.com/assets/imgs/home1/logo.webp" type="image/webp">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://voags.com/assets/imgs/home1/logo.webp">
+  
+  <link rel="shortcut icon" href="assets/sp_logo.png" type="image/webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/sp_logo.png">
 
   <!-- Preload Critical CSS -->
   <link rel="preload" href="assets/css/bootstrap.min.css" as="style">
@@ -258,14 +259,14 @@
 		<div class="sidebar" id="sidebar">
 			<!-- Logo -->
 			<div class="sidebar-logo">
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="logo logo-normal">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="logo logo-normal">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="logo-small">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="logo-small">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
-				<a href="https://smarthr.co.in/demo/html/template/index.html" class="dark-logo">
-					<img src="assets/img/website-1.png" alt="Logo">
+				<a href="dashboard.html" class="dark-logo">
+					<img src="assets/sp_logo.png" alt="Logo">
 				</a>
 			</div>
 			<!-- /Logo -->
@@ -349,8 +350,8 @@
 									</a>
 									<ul>
 										<li><a href="security_board-scheduling.html" ><i class="ti ti-calendar-plus"></i>Scheduling</a></li>
-										<li><a class="active" href="security_board-worker_calendar.html"><i class="ti ti-calendar-month"></i>Worker Calendar</a></li>
-										<li><a href="security_board-site_calendar.html"><i class="ti ti-calendar-time"></i>Site Calendar</a></li>
+										<li><a href="security_board-worker_calendar.html" class="active"><i class="ti ti-calendar-month"></i>Worker Calendar</a></li>
+										<li><a href="security_board-site_calendar.html" ><i class="ti ti-calendar-time"></i>Site Calendar</a></li>
 										<li><a href="security_board-today_rota.html"><i class="ti ti-calendar-time"></i>Today's Rota</a></li>
 
 										
@@ -436,7 +437,7 @@
 
 
 		<!-- Page Wrapper -->
-		<div id="scheduling" class="page-wrapper worker-calendar">
+		<div id="scheduling" class="page-wrapper site_calendar">
 			<div class="content">
 <div class="alert-box-container"></div>
 				<!-- Breadcrumb -->
@@ -452,22 +453,22 @@
                   <!-- Filter Header -->
                   <div class="filters">
                <div class="d-flex align-items-baseline justify-content-between flex-wrap gap-1">     <div class="left">
-				<button onclick="window.location='security_board-scheduling.html'" >Complete Rota</button>
+				<button onclick="window.location='security_board-scheduling.html'">Complete Rota</button>
 				<button onclick="window.location='security_board-worker_calendar.html'" class="active">Worker Calendar</button>
-				<button onclick="window.location='security_board-site_calendar.html'">Site Calendar</button>
+				<button onclick="window.location='security_board-site_calendar.html'" >Site Calendar</button>
 				<button onclick="window.location='security_board-today_rota.html'">Today's Rota</button>
 			  </div>
 			
 			  <div class="right"> 
-				<div class="status-summary">
+				  <div class="status-summary">
 					<div onclick="window.location='Clients-sites.html'" class="active-sites">&#9679; Active Sites (36)</div>
 <div onclick="window.location='Workers-all-workers.html'" class="active-workers" >&#9679; Active Workers (176)</div>
 <div onclick="window.location='total_hours.html'" class="total-hours" >&#9679; Total Hours (88177.70)</div>
 <div onclick="window.location='holidays.html'"  class="holiday-hours">&#9679; Holidays (10)</div>
 
 					</div>
+				
 			  </div>
-		
 
 
 
@@ -522,7 +523,63 @@
                    
                   </div>
               
-						<div id='calendar'></div>
+				  <div class="row" style="padding-right: 0px !important; padding-left: 0px !important;">
+
+					<!-- Calendar Sidebar -->
+					<div class="col-xxl-3 col-xl-4"  style="padding-right: 0px !important; padding-left: 0px !important;">
+						<div class="card">
+							<div class="card-body p-3">
+								<div class="border-bottom pb-2 mb-4">
+									<div class="datepic"></div> 
+								</div>
+
+								<!-- Event -->
+								<div class="border-bottom pb-4 mb-4">
+									<div class="d-flex align-items-center justify-content-between mb-2">
+										<h5>Event </h5>
+										<a href="#" class="link-primary" data-bs-toggle="modal" data-bs-target="#add_event"><i class="ti ti-square-rounded-plus-filled fs-16"></i></a>
+									</div>
+									<p class="fs-12 mb-2">Drag and drop your event or click in the calendar</p>
+									<div id='external-events'>
+										<div class="fc-event bg-transparent-success mb-1" data-event='{ "title": "Team Events" }' data-event-classname="bg-transparent-success">
+											<i class="ti ti-square-rounded text-success me-2"></i>Team Events
+										</div>
+										<div class="fc-event bg-transparent-warning mb-1" data-event='{ "title": "Team Events" }' data-event-classname="bg-transparent-warning">
+											<i class="ti ti-square-rounded text-warning me-2"></i>Work
+										</div>
+										<div class="fc-event bg-transparent-danger mb-1" data-event='{ "title": "External" }' data-event-classname="bg-transparent-danger">
+											<i class="ti ti-square-rounded text-danger me-2"></i>External
+										</div>
+										<div class="fc-event bg-transparent-skyblue mb-1" data-event='{ "title": "Projects" }' data-event-classname="bg-transparent-skyblue">
+											<i class="ti ti-square-rounded text-skyblue me-2"></i>Projects
+										</div>
+										<div class="fc-event bg-transparent-purple mb-1" data-event='{ "title": "Applications" }' data-event-classname="bg-transparent-purple">
+											<i class="ti ti-square-rounded text-purple me-2"></i>Applications
+										</div>
+										<div class="fc-event bg-transparent-info mb-0" data-event='{ "title": "Desgin" }' data-event-classname="bg-transparent-info">
+											<i class="ti ti-square-rounded text-info me-2"></i>Desgin
+										</div>
+									</div>
+								</div>
+								<!-- /Event -->
+
+					
+
+							</div>
+						</div>					
+
+					</div>
+					<!-- /Calendar Sidebar -->
+
+					<div class="col-xxl-9 col-xl-8 theiaStickySidebar">	
+						<div class="card border-0">
+							<div class="card-body">			
+								<div id="calendar"></div>
+							</div>
+						</div>		
+					</div>
+
+				</div>
 				
                   <!-- Calendar View -->
                 
@@ -1390,15 +1447,7 @@
 								</div>
 							</form>
 							
-							<script>
-								document.querySelector('.add-multiple-shifts_btn').addEventListener('click', function (e) {
-									e.preventDefault();
-									const wrapper = document.querySelector('.shift-wrapper');
-									const group = wrapper.querySelector('.shift-group');
-									const clone = group.cloneNode(true);
-									wrapper.appendChild(clone);
-								});
-							</script>
+							
 							
 						</div>
 					</div>
@@ -1427,7 +1476,7 @@
   
 
 <!-- Core JS Libraries -->
-<script src="assets/js/jquery-3.7.1.min.js" defer></script>
+<script src="assets/js/jquery-3.7.1.min.js" ></script>
 <script src="assets/js/bootstrap.bundle.min.js" defer></script>
 <script src="assets/js/feather.min.js" defer></script>
 <script src="assets/js/jquery.slimscroll.min.js" defer></script>
@@ -1441,7 +1490,7 @@
 
 <!-- Other Plugins -->
 <script src="assets/plugins/@simonwep/pickr/pickr.es5.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js" defer></script>
+<script src="https://smarthr.co.in/demo/html/template/assets/plugins/fullcalendar/index.global.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 
 <!-- Moment + Datetimepicker -->
@@ -1451,29 +1500,20 @@
 <!-- Custom Scripts -->
 <script src="assets/js/theme-colorpicker.js" defer></script>
 <script src="assets/js/script.js" defer></script>
-
+<script>
+	document.querySelector('.add-multiple-shifts_btn').addEventListener('click', function (e) {
+		e.preventDefault();
+		const wrapper = document.querySelector('.shift-wrapper');
+		const group = wrapper.querySelector('.shift-group');
+		const clone = group.cloneNode(true);
+		wrapper.appendChild(clone);
+	});
+</script>
 <!-- Inline Scripts after libraries load -->
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
-	  // Tabs
-	  const tabs = document.querySelectorAll(".tabs-parent button");
-	  const tabPanes = document.querySelectorAll(".tab-pane");
-  
-	  tabs.forEach(tab => {
-		tab.addEventListener("click", () => {
-		  tabs.forEach(t => t.classList.remove("active"));
-		  tabPanes.forEach(p => p.classList.remove("show", "active"));
-		  tab.classList.add("active");
-  
-		  const targetPane = document.querySelector(tab.dataset.bsTarget);
-		  if (targetPane) {
-			targetPane.classList.add("show", "active");
-		  }
-		});
-	  });
-  
-	  // Map Setup
-	  const london = [51.5074, -0.1278];
+	 // Map Setup
+	 const london = [51.5074, -0.1278];
 	  const oxford = [51.7520, -1.2577];
   
 	  const map1 = L.map('map-first').setView(london, 8);
@@ -1487,34 +1527,50 @@
 	  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; OpenStreetMap contributors'
 	  }).addTo(map2);
-  
-	  // Calendar Setup
+	  
+	})
+</script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
 	  const calendarEl = document.getElementById('calendar');
-
-const calendar = new FullCalendar.Calendar(calendarEl, {
-  initialView: 'dayGridMonth',
-  selectable: true,
-  headerToolbar: {
-	left: 'prev,next today',
-	center: 'title',
-	right: 'dayGridMonth,timeGridWeek,timeGridDay'
-  },
-  dateClick: function (info) {
-	const title = prompt('Enter Event Title:');
-	if (title) {
-	  calendar.addEvent({
-		title: title,
-		start: info.dateStr,
-		allDay: true
+	
+	  const calendar = new FullCalendar.Calendar(calendarEl, {
+		initialView: 'dayGridMonth', // 👈 Normal calendar with date numbers
+		initialDate: new Date().toISOString().split('T')[0],
+		headerToolbar: {
+		  left: 'prev,next today',
+		  center: 'title',
+		  right: 'dayGridMonth,dayGridWeek,dayGridDay'
+		},
+		events: [], // 👈 No events
 	  });
-	}
-  },
-  events: [] // You can pre-load events here
-});
-
-calendar.render();
-
-  
+	
+	  calendar.render();
+	
+	  // ✅ Sidebar Mini Calendar (datepicker)
+	  const sidebarEl = document.querySelector('.datepic');
+	  const sidebarCal = document.createElement('div');
+	  sidebarEl.appendChild(sidebarCal);
+	
+	  new FullCalendar.Calendar(sidebarCal, {
+		initialView: 'dayGridMonth',
+		headerToolbar: {
+		  left: 'prev',
+		  center: 'title',
+		  right: 'next'
+		},
+		selectable: true,
+		dateClick: function (info) {
+		  calendar.gotoDate(info.dateStr); // Click date in sidebar to jump main calendar
+		},
+		height: 'auto',
+		initialDate: new Date().toISOString().split('T')[0],
+	  }).render();
+	});
+	</script>
+	
+  <script>
+	  
 	  // Sidebar Menu
 	  $('.submenu > a').click(function (e) {
 		e.preventDefault();
@@ -1545,15 +1601,7 @@ calendar.render();
 		}
 	  });
   
-	  // Toggle class for selection
-	  document.querySelectorAll('.day-box').forEach(box => {
-		box.addEventListener('click', () => {
-		  box.classList.toggle('selected');
-		});
-	  });
-	});
   </script>
-  
   
 	
 	<script>
