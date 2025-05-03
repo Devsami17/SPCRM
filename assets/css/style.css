@@ -28353,7 +28353,8 @@ span.flatpickr-weekday {
 display:none;
 }
 .export_btn{
-  background-color:rgb(255, 224, 25)!important;
+  background-color:rgb(230, 155, 50)!important;
+  color:#fff !important;
 }
 .export_btn:hover , .add_btn:hover{
   color:#fff !important;
@@ -29154,4 +29155,53 @@ margin-right: 4px;
 .permission-table .bg-bluish td{
   background-color:rgb(255, 224, 25)!important;
   color:#fff;
+}
+#external-events .bg-dark-blue{
+    background-color: rgb(84, 137, 196);
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+#external-events .bg-lighter{
+  background-color: rgb(237, 235, 230);
+
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#external-events .bg-dark-green{
+  background-color:rgb(105, 207, 131);
+  font-weight: 600;
+  color: #fff !important;
+  text-transform: uppercase;
+}
+#external-events .bg-light-yellow{
+  background-color:rgb(250, 214, 107);
+  font-weight: 600;
+  color: #fff !important;
+  text-transform: uppercase;
+}
+#external-events .bg-light-blue {
+  background-color:rgb(128, 191, 255);
+  font-weight: 600;
+  color: #fff !important;
+  text-transform: uppercase;
+}
+#external-events .bg-purple {
+  background-color:rgb(159, 135, 245);
+  font-weight: 600;
+  color: #fff !important;
+  text-transform: uppercase;
+}
+#external-events .bg-red {
+  background-color:rgb(245, 91, 124);
+  font-weight: 600;
+  color: #fff !important;
+  text-transform: uppercase;
+}
+#external-events .bg-orange  {
+  background-color:rgb(245, 178, 95);
+  font-weight: 600;
+  color: #fff !important;
+
 }
