@@ -7073,9 +7073,9 @@ hr.text-danger {
 }
 
 .alert-solid-success {
-  background-color: rgb(230, 155, 50);
+  background-color: green;
   color: #FFF;
-  border-color: rgb(230, 155, 50);
+  border-color: green;
   position: absolute;
   width:90%
 }
@@ -28358,8 +28358,11 @@ display:none;
 }
 .export_btn:hover , .add_btn:hover{
   color:#fff !important;
-  background-color:rgb(230, 155, 50) !important ;
+  background-color:rgb(223 131 0) !important;
   border-color:none !important;
+}
+.sites_action-btn:hover{
+  background-color:rgb(223 131 0) !important;
 }
 .add_btn{
   background-color:rgb(230, 155, 50)!important;
@@ -29211,3 +29214,111 @@ margin-right: 4px;
   color: #000  !important;
 
 }
+.logs_table td p{
+text-align:start;
+color:#000;
+font-size:14px;
+
+}
+.action_require-table tr td{
+background-color: rgb(217, 110, 104);
+  font-weight: 400;
+color:#fff !important;
+} 
+.action_require-table tr.required td{
+  background-color: rgb(51, 125, 29);
+    font-weight: 400;
+  color:#fff !important;
+  } 
+  .lastest_action-table td{
+    text-align:start !important;
+  }
+
+  .lastest_action-table td p{
+    margin-bottom: 0px;
+  }
+  .sidebar{
+    overflow:auto;
+  }
+  h2 { 
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .report-sheet_card .header-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  
+  .report-sheet_card .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .report-sheet_card .btn {
+    padding: 6px 12px;
+    border: none;
+    color: white;
+    font-weight: 400;
+    font-size:13px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+ 
+  .report-sheet_card .green { 
+    background-color: green; 
+  }
+  @media only screen and (max-width:600px){
+    .responsive-table{
+      overflow: auto;
+    }
+    .responsive-table table{
+      width: 1400px;
+    }
+  }
+  .report-sheet_card .blue { 
+    background-color: green; 
+  }
+  
+  .report-sheet_card .red { 
+    background-color: #dc3545; 
+  }
+  
+  .report-sheet_card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+  }
+  
+  .report-sheet_card th, .report-sheet_card td {
+    border: 1px solid #ccc;
+    padding: 4px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .report-sheet_card td {
+    color:#000;
+  }
+  .report-sheet_card th {
+    background-color: #fff;
+    font-weight: 600;
+    color:#000;
+  }
+  
+  .report-sheet_card .cell-top {
+    font-weight: bold;
+    display: block;
+  }
+  
+  .report-sheet_card .cell-bottom {
+    font-size: 10px;
+    color: #555;
+    display: block;
+  }
+  .report-sheet_card{
+    padding: 20px 10px !important;
+  }

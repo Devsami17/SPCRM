@@ -10,7 +10,7 @@
 	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
 	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
 	<meta name="robots" content="noindex, nofollow">
-	<title>SP CRM</title>
+	<title>CRM - Report</title>
 
 	
 <!-- Favicon -->
@@ -54,12 +54,21 @@
 
 <!-- Main CSS -->
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+	h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
+  
+</style>
 
 </head>
 
 <body>
-
+	<div id="global-loader" style="display: none;">
+		<div class="page-loader"></div>
+	</div>
 
 
 	<!-- Main Wrapper -->
@@ -71,10 +80,10 @@
 
 				<div class="header-left">
 					<a href="dashboard.html" class="logo">
-						<img src="assets/sp_logo.png" alt="Logo">
+						<img src="assets/img/website-1.png" alt="Logo">
 					</a>
 					<a href="dashboard.html" class="dark-logo">
-						<img src="assets/sp_logo.png" alt="Logo">
+						<img src="assets/img/website-1.png" alt="Logo">
 					</a>
 				</div>
 
@@ -90,7 +99,7 @@
 					<div class="nav user-menu nav-list">
 
 						<div class="me-auto d-flex align-items-center" id="header-search">
-							<a  href="dashboard.html" class="btn btn-menubar me-1">
+							<a id="toggle_btn" href="dashboard.html" class="btn btn-menubar me-1">
 								<i class="ti ti-arrow-bar-to-left"></i>
 							</a>
 							<!-- Search -->
@@ -360,7 +369,7 @@
 						<li>
 							<ul>
 								<li class="menu-title"><span>MAIN MENU</span></li>
-								<li class="active">
+								<li>
 									<a  href="dashboard.html">
 										<i class="ti ti-layout-dashboard"></i><span>Dashboard</span>
 									</a>
@@ -387,7 +396,7 @@
 									<ul>
 										<li><a href="Workers-all-workers.html"><i class="ti ti-users"></i>All Workers</a></li>
 										<li><a href="total_hours.html"><i class="ti ti-clock-24"></i>Total Hours</a></li>
-										<li><a href="holidays.html"><i class="ti ti-helicopter-landing"></i>Holidays </a></li>
+										<li><a  class="active" href="holidays.html"><i class="ti ti-helicopter-landing"></i>Holidays </a></li>
 
 										
 									</ul>
@@ -467,6 +476,7 @@
 										<li><a href="#"><i class="ti ti-settings"></i>Performance Summary</a></li>
 									</ul>
 								</li>
+								
 							</ul>
 						</li>
 						
@@ -481,462 +491,255 @@
 		</div>
 		<!-- /Sidebar -->
 
-	
-
-
 
 		<!-- Page Wrapper -->
-		<div class="page-wrapper">
+		<div id="all-workers" class="page-wrapper">
 			<div class="content">
-
+<div class="alert-box-container"></div>
 				<!-- Breadcrumb -->
-				<div class="d-md-flex d-block align-items-center justify-content-between mb-3">
-					<div class="my-auto mb-2">
-						<h2 class="mb-1">Dashboard</h2>
-						
-					</div>
-					<div class="d-flex my-xl-auto right-content align-items-center flex-wrap ">
-						<div class="me-2 mb-2">
-							<div class="dropdown">
-								<a href="javascript:void(0);" class="dropdown-toggle export_btn btn btn-white d-inline-flex align-items-center" data-bs-toggle="dropdown">
-									<i class="ti ti-file-export me-1"></i>Export
-								</a>
-								<ul class="dropdown-menu  dropdown-menu-end p-3">
-									<li>
-										<a href="javascript:void(0);" class="dropdown-item rounded-1"><i
-												class="ti ti-file-type-pdf me-1"></i>Export as PDF</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);" class="dropdown-item rounded-1"><i
-												class="ti ti-file-type-xls me-1"></i>Export as Excel </a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="input-icon mb-2 position-relative">
-							<span class="input-icon-addon">
-								<i class="ti ti-calendar text-gray-9"></i>
-							</span>
-							<input type="text" class="form-control date-range bookingrange" placeholder="dd/mm/yyyy - dd/mm/yyyy">
-						</div>
-						
-					</div>
-				</div>
+		
 				<!-- /Breadcrumb -->
 
-				<div class="row">
-					<div class="col-xl-3 col-md-6">
-						<div class="card position-relative">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div class="avatar avatar-md br-10 icon-rotate bg-primary flex-shrink-0">
-										<span class="d-flex align-items-center"><i class="ti ti-users text-white fs-16"></i></span>
-									</div>
-									<div class="ms-3">
-										<p class="fw-medium text-truncate mb-1">Total Wokers</p>
-										<h5>2400</h5>
-									</div>
-								</div>
-								<div class="progress progress-xs mb-2">
-									<div class="progress-bar bg-primary" role="progressbar" style="width: 40%"></div>
-								</div>
-								<p class="fw-medium fs-13 mb-0"><span class="text-danger fs-12"><i class="ti ti-arrow-wave-right-up me-1"></i>-4.01% </span> from last week</p>
-								<span class="position-absolute top-0 end-0"><img src="https://smarthr.co.in/demo/html/template/assets/img/bg/card-bg-04.png" alt="Img"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6">
-						<div class="card position-relative">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div class="avatar avatar-md br-10 icon-rotate bg-secondary flex-shrink-0">
-										<span class="d-flex align-items-center"><i class="ti ti-heartbeat text-white fs-16"></i></span>
-									</div>
-									<div class="ms-3">
-										<p class="fw-medium text-truncate mb-1">Total Clients</p>
-										<h5>15000</h5>
-									</div>
-								</div>
-								<div class="progress progress-xs mb-2">
-									<div class="progress-bar bg-secondary" role="progressbar" style="width: 40%"></div>
-								</div>
-								<p class="fw-medium fs-13 mb-0"><span class="text-success fs-12"><i class="ti ti-arrow-wave-right-up me-1"></i>+20.01% </span> from last week</p>
-								<span class="position-absolute top-0 end-0"><img src="https://smarthr.co.in/demo/html/template/assets/img/bg/card-bg-04.png" alt="Img"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6">
-						<div class="card position-relative">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div class="avatar avatar-md br-10 icon-rotate bg-danger flex-shrink-0">
-										<span class="d-flex align-items-center"><i class="ti ti-stairs-up text-white fs-16"></i></span>
-									</div>
-									<div class="ms-3">
-										<p class="fw-medium text-truncate mb-1">No of Invoice Sent</p>
-										<h5>30</h5>
-									</div>
-								</div>
-								<div class="progress progress-xs mb-2">
-									<div class="progress-bar bg-pink" role="progressbar" style="width: 40%"></div>
-								</div>
-								<p class="fw-medium fs-13 mb-0"><span class="text-success fs-12"><i class="ti ti-arrow-wave-right-up me-1"></i>+55% </span> from last week</p>
-								<span class="position-absolute top-0 end-0"><img src="https://smarthr.co.in/demo/html/template/assets/img/bg/card-bg-04.png" alt="Img"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6">
-						<div class="card position-relative">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div class="avatar avatar-md br-10 icon-rotate bg-purple flex-shrink-0">
-										<span class="d-flex align-items-center"><i class="ti ti-users-group text-white fs-16"></i></span>
-									</div>
-									<div class="ms-3">
-										<p class="fw-medium text-truncate mb-1">Pending Interviews</p>
-										<h5>10</h5>
-									</div>
-								</div>
-								<div class="progress progress-xs mb-2">
-									<div class="progress-bar bg-purple" role="progressbar" style="width: 40%"></div>
-								</div>
-								<p class="fw-medium fs-13 mb-0"><span class="text-success fs-12"><i class="ti ti-arrow-wave-right-up me-1"></i>+55% </span> from last week</p>
-								<span class="position-absolute top-0 end-0"><img src="https://smarthr.co.in/demo/html/template/assets/img/bg/card-bg-04.png" alt="Img"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xl-12">
-                        <div class="card custom-card">
-                            <div class="card-header">
-                                <div class="card-title">Live Tracking</div>
-                            </div>
-                            <div class="card-body">
-                                <div id="map"></div>
-                            </div>
-                        </div>
-                    </div>
-				
-				</div>
-				<div class="row">
-					<div class="col-xxl-6 col-12 col-xl-6 d-flex">
-						<div class="card flex-fill">
-							<div class="card-header pb-2 d-flex align-items-center justify-content-between flex-wrap">
-								<h5 class="mb-2">Today Shifts (Live)</h5>
-							
-							</div>
-							<div class="card-body p-0">
-								<div class="table-responsive">	
-									<table class="table table-nowrap mb-0">
-										<thead>
-											<tr class="text-center">
-												<th>TIME</th>
-												<th>PERSON</th>
-												<th>IN</th>
-												<th>BREAK</th>
-												<th>OUT</th>
-											</tr>
-										</thead>
-										<tbody >
-											<tr >
-												<td>9:00 AM</td>
-												<td>John Doe</td>
-												<td>✔</td>
-												<td>12:00 PM</td>
-												<td>5:00 PM</td>
-											</tr>
-											<tr>
-												<td>9:30 AM</td>
-												<td>Jane Smith</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>5:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:00 AM</td>
-												<td>Mike Johnson</td>
-												<td>✔</td>
-												<td>12:30 PM</td>
-												<td>6:00 PM</td>
-											</tr>
-											<tr>
-												<td>8:45 AM</td>
-												<td>Sara Lee</td>
-												<td>✔</td>
-												<td>12:15 PM</td>
-												<td>4:45 PM</td>
-											</tr>
-											<tr>
-												<td>9:15 AM</td>
-												<td>Chris Brown</td>
-												<td>✔</td>
-												<td>1:30 PM</td>
-												<td>5:15 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-											<tr>
-												<td>10:30 AM</td>
-												<td>Emma Wilson</td>
-												<td>✔</td>
-												<td>1:00 PM</td>
-												<td>6:30 PM</td>
-											</tr>
-										</tbody>
-									</table>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xxl-6 col-12 col-xl-6 d-flex">
-						<div class="card flex-fill">
-							<div class="card-header pb-2 d-flex align-items-center justify-content-between flex-wrap">
-								<h5 class="mb-2">Action Required</h5>
-							
-							</div>
-							<div class="card-body p-0">
-								<div class="table-responsive">	
-									<table class="table table-nowrap mb-0 action_require-table">
-									
-									<tbody>
-										<tr class="required">
-											<td>0</td>
-											<td>Need Approval</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr >
-											<td>22</td>
-											<td>Check points</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr >
-											<td>6</td>
-											<td>Awaiting acceptance</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr >
-											<td>20</td>
-											<td>Awaiting Start</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr >
-											<td>1</td>
-											<td>Pending Dispatch</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr >
-											<td>12</td>
-											<td>Shift Started</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr  class="required">
-											<td>0</td>
-											<td>Shift Ended</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr  class="required">
-											<td>0</td>
-											<td>Shift Rejected</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr  >
-											<td>4</td>
-											<td>Visa Expiry</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr  >
-											<td>1000</td>
-											<td>S.I.A Expiry</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr  class="required" >
-											<td>4</td>
-											<td>S.I.A last checked today</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr  >
-											<td>51</td>
-											<td>S.I.A not found</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr  >
-											<td>2</td>
-											<td>S.I.A revoked</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-										<tr  >
-											<td>9</td>
-											<td>Passport expiry</td>
-											<td><a href="Clients-sites.html" class="btn btn-light btn-icon btn-sm"><i class="ti ti-arrow-right fs-16"></i></a></td>
-										</tr>
-									</tbody>
-									</table>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xl-6 col-lg-6 col-xxl-6 col-12 d-flex">
-						<div class="card flex-fill">
-							<div class="card-header">
-								<div class="d-flex align-items-center justify-content-between flex-wrap row-gap-2">
-									<h5>Upcomming Shifts</h5>
-									
-								</div>
-							</div>
-							<div class="card-body pb-0">
-								
-								<div id="revenue-income"></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xxl-6 col-12 col-xl-6 d-flex">
-						<div class="card flex-fill">
-							<div class="card-header pb-2 d-flex align-items-center justify-content-between flex-wrap">
-								<h5 class="mb-2">Latest Actions</h5>
-							
-							</div>
-							<div class="card-body p-0">
-								<div class="table-responsive">	
-									<table class="table table-nowrap mb-0 lastest_action-table">
-								
-									<tbody>
-										<tr>
-											<td>
-												<div>
-													<p>43 minutes ago</p>
-													<span class="text-info">MUHAMMAD NASIR (SPL)</span>
-												</div>
+				<div class="card">
+					
+				<div class="card-body p-0 report-sheet_card">
+					
+  <h2>GUARD JOB SHEET</h2>
+
+  <div class="header-title">
+    <div>From: Thu 08th May 2025</div>
+    <div>To: Thu 08th May 2025</div>
+    <div>Downloaded Date: Thu 08th May 2025</div>
+  </div>
+
+  <div class="actions">
+    <button class="btn green">Excel Report</button>
+    <button class="btn blue">Print PDF</button>
+    <button class="btn blue">Print</button>
+    <button class="btn red">Close</button>
+  </div>
+<div class="respo-table">
+
 	
-											</td>
-											<td>
-												<p><b>Job Accepted</b></p>
-												<span>{Start time:09/05/2025 00:00 End time:09/05/2025 00:00}</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div>
-													<p>3 hours ago</p>
-													<span class="text-info">HEENARANA</span>
-												</div>
-	
-											</td>
-											<td>
-												<p><b>Job Created Successfully - Via Job Duplicate</b></p>
-												<span>{Start time:09/05/2025 00:00 End time:09/05/2025 00:00}</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div>
-													<p>3 hours ago</p>
-													<span class="text-info">HEENARANA</span>
-												</div>
-	
-											</td>
-											<td>
-												<p><b>Job Created Successfully - Via Job Duplicate</b></p>
-												<span>{Start time:09/05/2025 00:00 End time:09/05/2025 00:00}</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div>
-													<p>3 hours ago</p>
-													<span class="text-info">HEENARANA</span>
-												</div>
-	
-											</td>
-											<td>
-												<p><b>Job Created Successfully - Via Job Duplicate</b></p>
-												<span>{Start time:09/05/2025 00:00 End time:09/05/2025 00:00}</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div>
-													<p>3 hours ago</p>
-													<span class="text-info">HEENARANA</span>
-												</div>
-	
-											</td>
-											<td>
-												<p><b>Job Created Successfully - Via Job Duplicate</b></p>
-												<span>{Start time:09/05/2025 00:00 End time:09/05/2025 00:00}</span>
-											</td>
-										</tr>
-									</tbody>
-									</table>
-									
-								</div>
-							</div>
-						</div>
+</div>
+<div class="responsive-table">
+	<table>
+		<thead>
+		  <tr>
+			<th>Ref. No.</th>
+			<th>Customer Name</th>
+			<th>Mobile</th>
+			<th>Email</th>
+			<th>Job Date</th>
+			<th>Start Time</th>
+			<th>End Time</th>
+			<th>Created Date/Time</th>
+			<th>Guard Rate</th>
+			<th>Sub Contractor</th>
+			<th>Sites</th>
+			<th>Check Points</th>
+			<th>Lost Time</th>
+			<th>Hours</th>
+			<th>Comments</th>
+			<th>Guard</th>
+			<th>Job Status</th>
+			<th>Source</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><span class="cell-top">123002</span><span class="cell-bottom">Delta Force</span></td>
+				<td><span class="cell-top">Alice Smith</span><span class="cell-bottom">Night Patrol</span></td>
+				<td><span class="cell-top">0987654321</span><span class="cell-bottom">N/A</span></td>
+				<td><span class="cell-top">alice@delta.com</span><span class="cell-bottom">N/A</span></td>
+				<td><span class="cell-top">08 May 2025</span><span class="cell-bottom">Thursday</span></td>
+				<td><span class="cell-top">22:00</span><span class="cell-bottom">Night</span></td>
+				<td><span class="cell-top">06:00</span><span class="cell-bottom">Morning</span></td>
+				<td><span class="cell-top">06 May 2025</span><span class="cell-bottom">15:00</span></td>
+				<td><span class="cell-top">£14</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">Alpha Group</span><span class="cell-bottom">Contractor</span></td>
+				<td><span class="cell-top">Oxford HQ</span><span class="cell-bottom">Patrol</span></td>
+				<td><span class="cell-top">9</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">1</span><span class="cell-bottom">Late</span></td>
+				<td><span class="cell-top">8</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">Late Start</span><span class="cell-bottom">Traffic</span></td>
+				<td><span class="cell-top">David</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Completed</span><span class="cell-bottom">Late</span></td>
+				<td><span class="cell-top">Manual</span><span class="cell-bottom">--</span></td>
+			  </tr>
+			  
+			  <tr>
+				<td><span class="cell-top">123003</span><span class="cell-bottom">SafeKeep</span></td>
+				<td><span class="cell-top">Mike Jordan</span><span class="cell-bottom">Event Security</span></td>
+				<td><span class="cell-top">0712345678</span><span class="cell-bottom">Alt No</span></td>
+				<td><span class="cell-top">mike@safe.com</span><span class="cell-bottom">N/A</span></td>
+				<td><span class="cell-top">09 May 2025</span><span class="cell-bottom">Friday</span></td>
+				<td><span class="cell-top">14:00</span><span class="cell-bottom">Afternoon</span></td>
+				<td><span class="cell-top">22:00</span><span class="cell-bottom">Night</span></td>
+				<td><span class="cell-top">07 May 2025</span><span class="cell-bottom">12:00</span></td>
+				<td><span class="cell-top">£13</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">Bravo Ltd</span><span class="cell-bottom">Contractor</span></td>
+				<td><span class="cell-top">Leeds Arena</span><span class="cell-bottom">Event</span></td>
+				<td><span class="cell-top">5</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">0</span><span class="cell-bottom">None</span></td>
+				<td><span class="cell-top">8</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">Concert</span><span class="cell-bottom">Smooth</span></td>
+				<td><span class="cell-top">Sarah</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Started</span><span class="cell-bottom">On Time</span></td>
+				<td><span class="cell-top">Online</span><span class="cell-bottom">Auto</span></td>
+			  </tr>
+			  
+			  <tr>
+				<td><span class="cell-top">123004</span><span class="cell-bottom">Guardian Co.</span></td>
+				<td><span class="cell-top">Ethan Clark</span><span class="cell-bottom">Bank Watch</span></td>
+				<td><span class="cell-top">0777777777</span><span class="cell-bottom">N/A</span></td>
+				<td><span class="cell-top">ethan@guardian.com</span><span class="cell-bottom">Bank Job</span></td>
+				<td><span class="cell-top">10 May 2025</span><span class="cell-bottom">Saturday</span></td>
+				<td><span class="cell-top">08:00</span><span class="cell-bottom">Morning</span></td>
+				<td><span class="cell-top">16:00</span><span class="cell-bottom">Evening</span></td>
+				<td><span class="cell-top">08 May 2025</span><span class="cell-bottom">10:00</span></td>
+				<td><span class="cell-top">£15</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">Charlie Group</span><span class="cell-bottom">Sub</span></td>
+				<td><span class="cell-top">London Bank</span><span class="cell-bottom">Vault</span></td>
+				<td><span class="cell-top">10</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">0</span><span class="cell-bottom">None</span></td>
+				<td><span class="cell-top">8</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">--</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">Ivan</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Assigned</span><span class="cell-bottom">Pending</span></td>
+				<td><span class="cell-top">Internal</span><span class="cell-bottom">--</span></td>
+			  </tr>
+			  
+			  
+			  
+			  <tr>
+				<td><span class="cell-top">123005</span><span class="cell-bottom">ShieldWorks</span></td>
+				<td><span class="cell-top">Lara Bates</span><span class="cell-bottom">Mall Patrol</span></td>
+				<td><span class="cell-top">0700111222</span><span class="cell-bottom">Work</span></td>
+				<td><span class="cell-top">lara@shield.com</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">11 May 2025</span><span class="cell-bottom">Sunday</span></td>
+				<td><span class="cell-top">10:00</span><span class="cell-bottom">Morning</span></td>
+				<td><span class="cell-top">18:00</span><span class="cell-bottom">Evening</span></td>
+				<td><span class="cell-top">09 May 2025</span><span class="cell-bottom">11:00</span></td>
+				<td><span class="cell-top">£12</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">Omega Inc</span><span class="cell-bottom">Contractor</span></td>
+				<td><span class="cell-top">Birmingham Mall</span><span class="cell-bottom">Shopping</span></td>
+				<td><span class="cell-top">7</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">0</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">8</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">--</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">Tom</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Pending</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">Manual</span><span class="cell-bottom">--</span></td>
+			  </tr>
+			  <tr>
+				<td><span class="cell-top">123006</span><span class="cell-bottom">Watchful Eye</span></td>
+				<td><span class="cell-top">Peter Wong</span><span class="cell-bottom">Night Security</span></td>
+				<td><span class="cell-top">0722334455</span><span class="cell-bottom">Emergency</span></td>
+				<td><span class="cell-top">peter@watchful.com</span><span class="cell-bottom">N/A</span></td>
+				<td><span class="cell-top">12 May 2025</span><span class="cell-bottom">Monday</span></td>
+				<td><span class="cell-top">21:00</span><span class="cell-bottom">Night</span></td>
+				<td><span class="cell-top">05:00</span><span class="cell-bottom">Morning</span></td>
+				<td><span class="cell-top">10 May 2025</span><span class="cell-bottom">09:30</span></td>
+				<td><span class="cell-top">£13</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">Gamma Force</span><span class="cell-bottom">Sub</span></td>
+				<td><span class="cell-top">Liverpool Port</span><span class="cell-bottom">Night</span></td>
+				<td><span class="cell-top">6</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">0.5</span><span class="cell-bottom">Break</span></td>
+				<td><span class="cell-top">7.5</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">Break logged</span><span class="cell-bottom">OK</span></td>
+				<td><span class="cell-top">Ali</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Ongoing</span><span class="cell-bottom">Night Shift</span></td>
+				<td><span class="cell-top">Online</span><span class="cell-bottom">--</span></td>
+			  </tr>
+			  
+			  <tr>
+				<td><span class="cell-top">123007</span><span class="cell-bottom">Sentinel Group</span></td>
+				<td><span class="cell-top">Nina Patel</span><span class="cell-bottom">Event Detail</span></td>
+				<td><span class="cell-top">0789988776</span><span class="cell-bottom">Work</span></td>
+				<td><span class="cell-top">nina@sentinel.com</span><span class="cell-bottom">N/A</span></td>
+				<td><span class="cell-top">13 May 2025</span><span class="cell-bottom">Tuesday</span></td>
+				<td><span class="cell-top">09:00</span><span class="cell-bottom">Morning</span></td>
+				<td><span class="cell-top">17:00</span><span class="cell-bottom">Evening</span></td>
+				<td><span class="cell-top">11 May 2025</span><span class="cell-bottom">14:45</span></td>
+				<td><span class="cell-top">£12.5</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">Delta Ltd</span><span class="cell-bottom">Sub</span></td>
+				<td><span class="cell-top">Manchester Expo</span><span class="cell-bottom">Event</span></td>
+				<td><span class="cell-top">4</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">1</span><span class="cell-bottom">Tech Issue</span></td>
+				<td><span class="cell-top">7</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">Device error</span><span class="cell-bottom">Reported</span></td>
+				<td><span class="cell-top">Mason</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Completed</span><span class="cell-bottom">Logged</span></td>
+				<td><span class="cell-top">Internal</span><span class="cell-bottom">--</span></td>
+			  </tr>
+			  
+			  <tr>
+				<td><span class="cell-top">123008</span><span class="cell-bottom">IronClad</span></td>
+				<td><span class="cell-top">Carlos Gomez</span><span class="cell-bottom">Gate Duty</span></td>
+				<td><span class="cell-top">0765544332</span><span class="cell-bottom">Mobile</span></td>
+				<td><span class="cell-top">carlos@ironclad.com</span><span class="cell-bottom">N/A</span></td>
+				<td><span class="cell-top">14 May 2025</span><span class="cell-bottom">Wednesday</span></td>
+				<td><span class="cell-top">06:00</span><span class="cell-bottom">Early</span></td>
+				<td><span class="cell-top">14:00</span><span class="cell-bottom">Afternoon</span></td>
+				<td><span class="cell-top">12 May 2025</span><span class="cell-bottom">08:30</span></td>
+				<td><span class="cell-top">£11.5</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">Helix Corp</span><span class="cell-bottom">Sub</span></td>
+				<td><span class="cell-top">York Terminal</span><span class="cell-bottom">Static</span></td>
+				<td><span class="cell-top">8</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">0</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">8</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">--</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">Brian</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Confirmed</span><span class="cell-bottom">Early</span></td>
+				<td><span class="cell-top">Manual</span><span class="cell-bottom">--</span></td>
+			  </tr>
+			  
+			  <tr>
+				<td><span class="cell-top">123009</span><span class="cell-bottom">CoreSecure</span></td>
+				<td><span class="cell-top">Diana Lee</span><span class="cell-bottom">School Security</span></td>
+				<td><span class="cell-top">0744123987</span><span class="cell-bottom">Mobile</span></td>
+				<td><span class="cell-top">diana@coresecure.com</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">15 May 2025</span><span class="cell-bottom">Thursday</span></td>
+				<td><span class="cell-top">07:30</span><span class="cell-bottom">Morning</span></td>
+				<td><span class="cell-top">15:30</span><span class="cell-bottom">Afternoon</span></td>
+				<td><span class="cell-top">13 May 2025</span><span class="cell-bottom">10:20</span></td>
+				<td><span class="cell-top">£13.2</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">NeoSec</span><span class="cell-bottom">Partner</span></td>
+				<td><span class="cell-top">Brighton High</span><span class="cell-bottom">School</span></td>
+				<td><span class="cell-top">10</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">0</span><span class="cell-bottom">None</span></td>
+				<td><span class="cell-top">8</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">Kids friendly</span><span class="cell-bottom">All good</span></td>
+				<td><span class="cell-top">Helen</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Done</span><span class="cell-bottom">No Issues</span></td>
+				<td><span class="cell-top">Portal</span><span class="cell-bottom">--</span></td>
+			  </tr>
+			  
+			  <tr>
+				<td><span class="cell-top">123010</span><span class="cell-bottom">PrimeShield</span></td>
+				<td><span class="cell-top">Jacob Knight</span><span class="cell-bottom">Logistics</span></td>
+				<td><span class="cell-top">0798877665</span><span class="cell-bottom">Work</span></td>
+				<td><span class="cell-top">jacob@primeshield.com</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">16 May 2025</span><span class="cell-bottom">Friday</span></td>
+				<td><span class="cell-top">13:00</span><span class="cell-bottom">Afternoon</span></td>
+				<td><span class="cell-top">21:00</span><span class="cell-bottom">Night</span></td>
+				<td><span class="cell-top">14 May 2025</span><span class="cell-bottom">16:45</span></td>
+				<td><span class="cell-top">£12.8</span><span class="cell-bottom">Per Hour</span></td>
+				<td><span class="cell-top">LogiSec</span><span class="cell-bottom">Sub</span></td>
+				<td><span class="cell-top">Coventry Depot</span><span class="cell-bottom">Warehouse</span></td>
+				<td><span class="cell-top">6</span><span class="cell-bottom">Valid</span></td>
+				<td><span class="cell-top">0</span><span class="cell-bottom">None</span></td>
+				<td><span class="cell-top">8</span><span class="cell-bottom">Hours</span></td>
+				<td><span class="cell-top">--</span><span class="cell-bottom">--</span></td>
+				<td><span class="cell-top">Zara</span><span class="cell-bottom">Guard</span></td>
+				<td><span class="cell-top">Started</span><span class="cell-bottom">On Time</span></td>
+				<td><span class="cell-top">Manual</span><span class="cell-bottom">--</span></td>
+			  </tr>
+			  
+		</tbody>
+	  </table>
+</div>
 					</div>
 				</div>
 			
@@ -946,71 +749,91 @@
 
 		</div>
 		<!-- /Page Wrapper -->
+	<!-- Add Client -->
 
+	<!-- /Delete Modal -->
 	</div>
 	<!-- /Main Wrapper -->
-<!-- jQuery first -->
+
+<!-- jQuery -->
+
+
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-<!-- Moment (via CDN) -->
-<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/min/moment.min.js"></script>
-
-<!-- Bootstrap -->
+<!-- Bootstrap Core JS -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-<!-- Feather, Slimscroll, etc. -->
+<!-- Feather Icon JS -->
 <script src="assets/js/feather.min.js"></script>
+
+<!-- Slimscroll JS -->
 <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-<!-- Daterangepicker (after Moment.js) -->
+<!-- Daterangepicker JS -->
 <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 
-<!-- Apexcharts (if used) -->
+<!-- Chart JS -->
 <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-<!-- Optional chart data -->
 <script src="assets/plugins/apexchart/chart-data.js"></script>
 
-<!-- Peity (only if files exist) -->
-<!-- <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-<script src="assets/plugins/peity/chart-data.js"></script> -->
+<!-- Peity Chart JS -->
+<script src="assets/plugins/peity/jquery.peity.min.js"></script>
+<script src="assets/plugins/peity/chart-data.js"></script>
 
-<!-- Bootstrap DateTimePicker -->
+<!-- Datetimepicker JS -->
+<script src="assets/js/moment.js"></script>
 <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-<!-- Pickr / Custom -->
+<!-- Color Picker JS -->
 <script src="assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+<!-- Custom JS -->
 <script src="assets/js/theme-colorpicker.js"></script>
 <script src="assets/js/script.js"></script>
 
  <!-- Leaflet Maps JS -->
  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+	  // Sidebar Menu
+	  $('.submenu > a').click(function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $submenu = $this.next('ul');
+  
+		if (!$this.hasClass('subdrop')) {
+		  $('.submenu > a').removeClass('subdrop');
+		  $('.submenu ul').slideUp(200);
+		  $this.addClass('subdrop');
+		  $submenu.slideDown(200);
+		} else {
+		  $this.removeClass('subdrop');
+		  $submenu.slideUp(200);
+		}
+	  });
+  
+	  var currentPage = window.location.pathname.split("/").pop();
+	  $('#sidebar-menu a').each(function () {
+		var linkPage = $(this).attr('href');
+		if (linkPage === currentPage) {
+		  $(this).addClass('active');
+		  var $submenu = $(this).closest('.submenu');
+		  if ($submenu.length) {
+			$submenu.find('> a').addClass('subdrop');
+			$submenu.find('ul').slideDown(0).css('display', 'block');
+		  }
+		}
+	  });
+  
+	  // Toggle class for selection
+	  document.querySelectorAll('.day-box').forEach(box => {
+		box.addEventListener('click', () => {
+		  box.classList.toggle('selected');
+		});
+	  });
+	
+</script>
 
- <script>
-
-   window.addEventListener('load', function () {
-      if (typeof L === 'undefined') {
-        alert('Leaflet (L) is still undefined! Check CDN.');
-        return;
-      }
-
-      var map = L.map('map').setView([51.505, -0.09], 13); 
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
-
-      
-      var redZone = L.circle([51.505, -0.09], {
-        color: '',        
-        fillColor: '#f03',  
-        fillOpacity: 0.5,
-        radius: 700         
-	      }).addTo(map);
-
-      redZone.bindPopup("Red Zone Area");
-    });
- </script>
-
+	
 </body>
 
 
